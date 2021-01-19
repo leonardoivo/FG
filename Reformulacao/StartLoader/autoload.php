@@ -1,4 +1,4 @@
-<?php
+<?php 
 function autoload_de_teste($Class){
     $P = [''];
     $Incluido = null;

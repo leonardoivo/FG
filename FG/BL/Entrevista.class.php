@@ -30,7 +30,6 @@ public function GetEntrevistado(){
 
 
 
-
   return $this->entrevistado;
 
 
@@ -55,32 +54,11 @@ public function GetPerguntaEntrevista(){
 public function ___construct(){}
 
 public function CriarEntrevista($assunto,$entrevistado,$bioEntrevistado){
-$insercao = array();
-$insercao['inserir']="insert into";
-$insercao['tabela']="entrevista";
-
-  $inclusao = new CrudTextoJornalistico();
-
-$inclusao->Criar($insercao);
-
-
-    
-
 
 
 }
 
 public function ListarEntrevistas(){
- $consulta= new CrudTextoJornalistico();
- 
-  $query=array();
-  $query["operacao"]="select";
-  $query["campos-retorno"]="*";
-  $query["em"]="from";
-  $query["tabela"]="entrevista";
-
-$resultado  = $consulta->listar($query);
-
 
 }
 

@@ -1,4 +1,11 @@
 <?php
-namespace TrilhosDorioCadastro{}
+namespace FG\BL{
+class ControleAcesso{
+
+    
+}
+
+
+}
 
 ?>

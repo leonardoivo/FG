@@ -1,6 +1,8 @@
 <?php
 namespace FG\BL{
    use FG\DAL\CrudTextoJornalistico;
+   use FG\DTO\TextoJornalisticoDTO;
+   use FG\LO\TextoJornalisticoLO;
     class TextoJornalistico{
       
         var $titulo;
@@ -36,7 +38,25 @@ namespace FG\BL{
 
            public function ___construct(){}
 
-            public function CriarTexto(){}
+            public function CriarTexto(TextoJornalisticoDTO $texto){
+            $textojornalistico = new CrudTextoJornalistico();
+            $textojornalistico->GravarTexto($texto);
+
+
+
+            }
+       public function Criar()
+              {
+               $textojornalistico = new CrudTextoJornalistico();
+               $textojornalistico->GravarTexto($this->texto);
+               }
+
+         public function ListarTextos(){
+          $textojornalistico = new CrudTextoJornalistico();
+          $listTexto = new TextoJornalisticoLO();
+          $listTexto= $textojornalistico->listar();
+          return  $listTexto;
+         }
            
 
     }

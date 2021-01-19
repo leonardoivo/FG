@@ -1,11 +1,14 @@
 <?php
+namespace FG\DAL;
+use \PDO;
+
  class Crud extends PDO{
 
   public      $TipoDatabase='mysql';
-  private     $EnderecoDB='localhost';
-  private     $banco='FatosGerais';
-  private     $usuariodb='root';
-  private     $senhadb='784512';
+  protected   $EnderecoDB='localhost';
+  protected     $banco='FatosGerais';
+  protected    $usuariodb='root';
+  protected   $senhadb='784512';
   protected   $tabela="";
   //protected   $conexao;
 
@@ -13,10 +16,10 @@
  {
         try
         {
-          parent::__construct($this->TipoDatabase.':host='.$this->EnderecoDB.';dbname='.$this->banco,$this->usuariodb,$this->senhadb);
+         parent::__construct($this->TipoDatabase.':host='.$this->EnderecoDB.';dbname='.$this->banco,$this->usuariodb,$this->senhadb);
 
         }
-        catch(PDOException $e)
+        catch(\PDOException $e)
         {
         echo $e->getMessage();
 

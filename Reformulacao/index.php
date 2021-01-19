@@ -1,40 +1,41 @@
 <?php
-// require_once("TextoJornalistico.php");
-// require_once("Entrevista.php");
-// namespace FatosGerais;
-// class Teste {
 
-// $texto = new TextoJornalistico();
+  
+define('WWW_ROOT',dirname(__FILE__));
+define('DS',DIRECTORY_SEPARATOR);
+require_once(WWW_ROOT.DS.'autoloader.php');
+use FG\BL\{TextoJornalistico as texto,Entrevista as Conversa,Secao};
+//use \ArrayObject;
 
-// $texto->setTitulo("Eu sou burro");
-// echo $texto->GetTitulo();
-
-require_once("autoload.php");
+//use FG\DAL\CrudSecao;
 
 
 
-//}
-$texto = new TextoJornalistico();
+$texto = new texto();
 
 $texto->setTitulo("Eu sou burro<br/>");
 echo $texto->GetTitulo();
-$NovaEntrevista = new Entrevista();
+$NovaEntrevista = new Conversa();
 $NovaEntrevista->setTitulo("Eu nao sou burro<br/>");
 echo $NovaEntrevista->GetTitulo();
-// $conectar = new crud();
-// $conectar->imprimir();
+//$conectar = new Crud();
+//$conectar->imprimir();
 
 echo("--------teste de gravação<br/>");
 
 
+$dado = new Secao();
+$dado->CriarSecao("Seção de teste de gravação22");
+$dado->ListarSecao();
 
 
 
 
 echo("--------fim teste de gravação <br/>");
 
-$dado = new CrudSecao();
-$dado->CriarSecao("test");
+//$dado = new CrudSecao();
+//$dado->GravarSecao("test2");
+//$dado->ListarSecao();
 
 
 

@@ -1,115 +1,142 @@
 <?php
 namespace FG\DAL{
    use FG\DAL\Crud;
-   class CrudTextoJornalistico extends Crud{
+   use FG\LO\TextoJornalisticoLO;
+   use FG\DTO\TextoJornalisticoDTO;
+   use \PDO;
 
-      public function listar($tipotexto){
-  
-          $resultado = $this->conexao->prepare("select * from TextoJornalistico where idtipotexto=".$tipotexto);
-          $resultado->execute();
-          $linha= $resultado->fetchALL(\PDO::FETCH_OBJ); 
-        
-            foreach($linha as $listar){
-           
-        
-        
-        
+   class CrudTextoJornalistico extends Crud{
+      private $conexao;
+      private $efetivar;
+
+
+   public function __construct()
+   {
+      $this->conexao = new Crud();
+   }
+
+
+
+      public function listarTipoTexto($tipotexto){
+         
+         $resultado = $this->conexao->query("select * from TextoJornalistico where idtipotexto=".$tipotexto);
+
+         // $resultado = $this->conexao->prepare("select * from TextoJornalistico where idtipotexto=".$tipotexto);
+         
+          //  $resultado->execute();
+         //  $linha= $resultado->fetchALL(\PDO::FETCH_OBJ); 
+          $textoJornalistico = new TextoJornalisticoLO();
+          while($linha=$resultado->fetch(PDO::FETCH_ASSOC)){
+
+           $textoJornalisticoDT= new TextoJornalisticoDTO();
+           $textoJornalisticoDT->idtextojor=$linha['idtextojor'];
+           $textoJornalisticoDT->texto=$linha['texto'];
+           $textoJornalisticoDT->datapublicacao=$linha['datapublicacao'];
+           $textoJornalisticoDT->idusuario=$linha['idusuario'];
+           $textoJornalisticoDT->autor=$linha['autor'];
+           $textoJornalisticoDT->id_secao=$linha['id_secao'];
+           $textoJornalisticoDT->idcoluna=$linha['idcoluna'];
+           $textoJornalisticoDT->idtipotexto=$linha['idtipotexto'];
+           $textoJornalisticoDT->titulo=$linha['titulo'];
+           $textoJornalisticoDT->subtitulo=$linha['subtitulo'];
+           $textoJornalistico->add($textoJornalisticoDT);
             }
         
-        
+        return $textoJornalistico;
         }
+        public function listar(){
+         
+         $resultado = $this->conexao->query("select * from TextoJornalistico");
+
+         // $resultado = $this->conexao->prepare("select * from TextoJornalistico where idtipotexto=".$tipotexto);
+         
+          //  $resultado->execute();
+         //  $linha= $resultado->fetchALL(\PDO::FETCH_OBJ); 
+          $textoJornalistico = new TextoJornalisticoLO();
+          while($linha=$resultado->fetch(PDO::FETCH_ASSOC)){
+
+           $textoJornalisticoDT= new TextoJornalisticoDTO();
+           $textoJornalisticoDT->idtextojor=$linha['idtextojor'];
+           $textoJornalisticoDT->texto=$linha['texto'];
+           $textoJornalisticoDT->datapublicacao=$linha['datapublicacao'];
+           $textoJornalisticoDT->idusuario=$linha['idusuario'];
+           $textoJornalisticoDT->autor=$linha['autor'];
+           $textoJornalisticoDT->id_secao=$linha['id_secao'];
+           $textoJornalisticoDT->idcoluna=$linha['idcoluna'];
+           $textoJornalisticoDT->idtipotexto=$linha['idtipotexto'];
+           $textoJornalisticoDT->titulo=$linha['titulo'];
+           $textoJornalisticoDT->subtitulo=$linha['subtitulo'];
+           $textoJornalistico->add($textoJornalisticoDT);
+            }
+        
+        return $textoJornalistico;
+        }
+
+
         
         public function listarPorBusca($tipotexto,$parametrosBusca){
-          $resultado = array();
+        //  $resultado = array();
+         
+
         
-        
-           $this->tabela= "select * from TextoJornalistico where idtipotexto=? and texto=?";  
-           $this->conexao->prepare($this->tabela);
-           $this->conexao->bindValue(1,$tipotexto);
-           $this->conexao->bindValue(2,$parametrosBusca);
-           $this->conexao->execute();
-           while($linha=$this->conexao->fetch()){
-              $resultado = array("texto"=>$linha[1],"idjor"=>$linha[2]);
-        
-        
-        
-        
-        
+          // $this->tabela= "select * from TextoJornalistico where idtipotexto=? and texto=?";  
+         //   $this->conexao->prepare($this->tabela);
+         //   $this->conexao->bindValue(1,$tipotexto);
+         //   $this->conexao->bindValue(2,$parametrosBusca);
+         //   $this->conexao->execute();
+          $resultado= $this->conexao->query("select * from TextoJornalistico where idtipotexto={$tipotexto} and texto={$parametrosBusca}");
+          $textoJornalistico = new TextoJornalisticoLO();
+           while($linha=$resultado->fetch(PDO::FETCH_ASSOC)){
+            $textoJornalisticoDT= new TextoJornalisticoDTO();
+              $textoJornalistico->add($textoJornalisticoDT);
+              $textoJornalisticoDT= new TextoJornalisticoDTO();
+              $textoJornalisticoDT->idtextojor=$linha['idtextojor'];
+              $textoJornalisticoDT->texto=$linha['texto'];
+              $textoJornalisticoDT->datapublicacao=$linha['datapublicacao'];
+              $textoJornalisticoDT->idusuario=$linha['idusuario'];
+              $textoJornalisticoDT->autor=$linha['autor'];
+              $textoJornalisticoDT->id_secao=$linha['id_secao'];
+              $textoJornalisticoDT->idcoluna=$linha['idcoluna'];
+              $textoJornalisticoDT->idtipotexto=$linha['idtipotexto'];
+              $textoJornalisticoDT->titulo=$linha['titulo'];
+              $textoJornalisticoDT->subtitulo=$linha['subtitulo'];
+              $textoJornalistico->add($textoJornalisticoDT);
            }
-           
-        
-           return $resultado;
-           }
-        
-        
-        
-           public function Alterar($tipotexto,$campos,$idtextojor){
-              
-              $cabecalhoUpdate=" update  TextoJornalistico set ";
-                 
-              foreach($campos as $key=>$value)
-              {
-                 $cabecalhoUpdate.= $key."=:".$key.',';
-        
-              }
-              
-              $totalcb=strlen($cabecalhoUpdate);
-              $cabecalho=substr($cabecalhoUpdate,0,$totalcb-1);
-              $this->tabela=$cabecalho." where idtextojor=? and idtipotexto=?";
-              $this->conexao->prepare($this->tabela);
-              foreach($campos as $key=>$value)
-              {
-                 $this->conexao->bindValue($key,$campos[$key]);
-                 
-              }
-             
-              $this->conexao->execute();
-              
-              }
-        
-        public function Criar($campos){
-            
-           $cabecalhoinsert="insert into TextoJornalistico (";
-           $valores= "values (";
-           
-        
-            foreach($campos as $key=>$value)
-             {
-                 $cabecalhoinsert.= $key.",";
-             }
-        
-            $totalcb=strlen($cabecalhoinsert);
-            $cabecalho=substr($cabecalhoinsert,0,$totalcb-1);
-            $cabecalho.=")";
-        
-            foreach($campos as $key=>$value)
-           {
-              $valores .= ':'.$key.',';
-           }
-           $totalIn=strlen($valores);
-           $entradas=substr($valores,0,$totalIn-1);
-           $entradas.=")";
-           $this->tabela= $cabecalho.$entradas;    
-           $this->conexao->prepare($this->tabela);
-        
-           foreach($campos as $key=>$value)
-           {
-              
-              $this->conexao->bindValue($key,$campos[$key]);
-        
+         
+           return $textoJornalistico;
            }
         
-            $this->conexao->execute();
-                 
-                 }
+        public function GravarTexto(TextoJornalisticoDTO $texto){
+         $this->efetivar=$this->conexao->prepare("");
+         $this->efetivar->bindParam("nome", $CadastroAssociadoDT->nome);
+         $this->efetivar->execute();
+           //echo "\nPDOStatement::errorInfo():\n";
+           $arr = $this->efetivar->errorInfo();
+                     //print_r($arr);
+
+        }
+
+        public function AlterarTexto(TextoJornalisticoDTO $texto, $idtextojor){
+         $this->efetivar->bindParam("idtextojor", $idtextojor);
+         $this->efetivar->execute();
+           //echo "\nPDOStatement::errorInfo():\n";
+           $arr = $this->efetivar->errorInfo();
+                     //print_r($arr);
+
+        }
+
         public function excluir($tipotexto,$idtextojor){
         
-                 $this->tabela= "delete from TextoJornalistico where idtextojor= ? and idtipotexto=?";  
-                 $this->conexao->prepare($this->tabela);
-                 $this->conexao->bindValue(1,$idtextojor); 
-                 $this->conexao->bindValue(2,$tipotexto);
-                 $this->conexao->execute();   
-                 }       
+         $this->tabela= "delete from TextoJornalistico where idtextojor= ? and idtipotexto=?";  
+         $this->conexao->prepare($this->tabela);
+         $this->conexao->bindValue(1,$idtextojor); 
+         $this->conexao->bindValue(2,$tipotexto);
+         $this->conexao->execute();   
+         }       
+
+        
+           
+        
   }
 
 }
