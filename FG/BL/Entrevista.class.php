@@ -2,14 +2,19 @@
 namespace FG\BL{
 use FG\BL\TextoJornalistico;
 use FG\DAL\CrudTextoJornalistico;
-  //require_once("TextoJornalistico.class.php");
+    use FG\DTO\TextoJornalisticoDTO;
+
+//require_once("TextoJornalistico.class.php");
 
 class Entrevista extends TextoJornalistico{
 private $entrevistado;
 private $perguntaEntrevista;
 private $bioEntrevistado;
-private $assunto;
-
+private $entrevistador;
+private $tema;
+private $respostaEntrevistado;
+private $DescricaoEntrevista;
+private $dataentrevista;
 
 public function SetEntrevistado($entrevistado){
 
@@ -53,12 +58,21 @@ public function GetPerguntaEntrevista(){
 
 public function ___construct(){}
 
-public function CriarEntrevista($assunto,$entrevistado,$bioEntrevistado){
+public function CriarEntrevista($tema,$entrevistado,$bioEntrevistado){
+ 
+  $entrevistaDT = new TextoJornalisticoDTO();
+  $entrevistaDT->titulo=$this->tema;
+  $entrevistaDT->autor=$this->entrevistador;
+  $entrevistaDT->datapublicacao=$this->dataentrevista;
+  $entrevistaDT->texto=$this->DescricaoEntrevista.$this->entrevistado.$this->bioEntrevistado.$this->respostaEntrevistado;
+  $this->CriarTexto($entrevistaDT);
 
 
 }
 
 public function ListarEntrevistas(){
+  $this->tipotexto=3;
+  $this->ListarTextos($this->tipotexto);
 
 }
 

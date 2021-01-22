@@ -30,6 +30,11 @@ public function ListarSecao(){
 
     }
 
+public function alterarSecao($id_secao,$nomesecao){
+
+    
+}
+
 }
 
 }

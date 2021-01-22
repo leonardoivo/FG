@@ -19,7 +19,7 @@ namespace FG\DAL{
 
       public function listarTipoTexto($tipotexto){
          
-         $resultado = $this->conexao->query("select * from TextoJornalistico where idtipotexto=".$tipotexto);
+         $resultado = $this->conexao->query("select * from TextoJornalistico where idtipotexto in({$tipotexto})");
 
          // $resultado = $this->conexao->prepare("select * from TextoJornalistico where idtipotexto=".$tipotexto);
          
@@ -106,7 +106,7 @@ namespace FG\DAL{
            return $textoJornalistico;
            }
         
-        public function GravarTexto(TextoJornalisticoDTO $texto){
+        public function GravarTexto(TextoJornalisticoDTO $CadastroAssociadoDT){
          $this->efetivar=$this->conexao->prepare("");
          $this->efetivar->bindParam("nome", $CadastroAssociadoDT->nome);
          $this->efetivar->execute();
@@ -117,6 +117,7 @@ namespace FG\DAL{
         }
 
         public function AlterarTexto(TextoJornalisticoDTO $texto, $idtextojor){
+         $this->efetivar=$this->conexao->prepare("");
          $this->efetivar->bindParam("idtextojor", $idtextojor);
          $this->efetivar->execute();
            //echo "\nPDOStatement::errorInfo():\n";
@@ -128,10 +129,10 @@ namespace FG\DAL{
         public function excluir($tipotexto,$idtextojor){
         
          $this->tabela= "delete from TextoJornalistico where idtextojor= ? and idtipotexto=?";  
-         $this->conexao->prepare($this->tabela);
-         $this->conexao->bindValue(1,$idtextojor); 
-         $this->conexao->bindValue(2,$tipotexto);
-         $this->conexao->execute();   
+         $this->efetivar=$this->conexao->prepare($this->tabela);
+         $this->efetivar->bindValue(1,$idtextojor); 
+         $this->efetivar->bindValue(2,$tipotexto);
+         $this->efetivar->execute();   
          }       
 
         
