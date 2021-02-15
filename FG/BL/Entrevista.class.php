@@ -2,7 +2,7 @@
 namespace FG\BL{
 use FG\BL\TextoJornalistico;
 use FG\DAL\CrudTextoJornalistico;
-    use FG\DTO\TextoJornalisticoDTO;
+use FG\DTO\TextoJornalisticoDTO;
 
 //require_once("TextoJornalistico.class.php");
 
@@ -15,6 +15,17 @@ private $tema;
 private $respostaEntrevistado;
 private $DescricaoEntrevista;
 private $dataentrevista;
+
+
+public function __construct()
+{
+    $arguments = func_get_args();
+    $numberOfArguments = func_num_args();
+
+    if (method_exists($this, $function = '__construct'.$numberOfArguments)) {
+        call_user_func_array(array($this, $function), $arguments);
+    }
+}
 
 public function SetEntrevistado($entrevistado){
 
@@ -56,8 +67,6 @@ public function GetPerguntaEntrevista(){
 
 
 
-public function ___construct(){}
-
 public function CriarEntrevista($tema,$entrevistado,$bioEntrevistado){
  
   $entrevistaDT = new TextoJornalisticoDTO();
@@ -66,8 +75,6 @@ public function CriarEntrevista($tema,$entrevistado,$bioEntrevistado){
   $entrevistaDT->datapublicacao=$this->dataentrevista;
   $entrevistaDT->texto=$this->DescricaoEntrevista.$this->entrevistado.$this->bioEntrevistado.$this->respostaEntrevistado;
   $this->CriarTexto($entrevistaDT);
-
-
 }
 
 public function ListarEntrevistas(){
@@ -75,6 +82,10 @@ public function ListarEntrevistas(){
   $this->ListarTextos($this->tipotexto);
 
 }
+
+
+
+
 
 }
 }

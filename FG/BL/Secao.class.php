@@ -31,8 +31,14 @@ public function ListarSecao(){
     }
 
 public function alterarSecao($id_secao,$nomesecao){
-
+   $secao = new CrudSecao();
+   $secao->AlterarSecao($nomesecao,$id_secao);
     
+}
+
+public function ExcluirSecao($id_secao){
+$secao= new CrudSecao();
+$secao->ExcluirSecao($id_secao);
 }
 
 }

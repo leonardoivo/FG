@@ -46,13 +46,13 @@ public function setTexto($text){
  
   public function CriarTexto(TextoJornalisticoDTO $texto){
   $textojornalistico = new CrudTextoJornalistico();
-  $textojornalistico->GraprotectedTexto($texto);
+  $textojornalistico->GravarTexto($texto);
 
    }
 public function Criar()
 {
   $textojornalistico = new CrudTextoJornalistico();
-  $textojornalistico->GraprotectedTexto($this->texto);
+  $textojornalistico->GravarTexto($this->texto);
 }
 
 public function ListarTextos($tipotexto){

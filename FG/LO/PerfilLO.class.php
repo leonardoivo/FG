@@ -10,7 +10,7 @@ function  __construct()
 {
     $this->Perfil= new ArrayObject();
 }
-public function add(PerfilDTO $Perfil)
+public function addPerfil(PerfilDTO $Perfil)
     {
         //$this->Perfil->offsetSet($Perfil->getTitulo(),$Perfil); //Função porfora77
         $this->Perfil->append($Perfil); //adiciona um indice automatico
