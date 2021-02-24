@@ -21,9 +21,26 @@ namespace FG\BL{
       }
   }
   
+  public function ListarReportagens(){
+   $reportagens = new TextoJornalisticoDTO();
+   $this->tipotexto=3;
+
+   $reportagens = $this->ListarTextos($ $this->tipotexto);
+   
+  }
+    public function CriarReportagem(TextoJornalisticoDTO $reportagemDT){
+        $this->CriarTexto($reportagemDT);
+    }
     
-    
-    
+    public function AlterarReportagem($idtextojor,TextoJornalisticoDTO $reportagemDT){
+        $this->AlterarTextoJor($reportagemDT,$idtextojor,$idtextojor);
+
+
+    }
+    public function ExcluirReportagem($idtextojor, $tipotexto){
+        $this->ExcluirTexto($idtextojor,$tipotexto);
+    }
+
     }
 }
 ?>

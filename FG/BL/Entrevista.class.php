@@ -83,8 +83,14 @@ public function ListarEntrevistas(){
 
 }
 
+public function AlterarEntrevista($idtextojor,TextoJornalisticoDTO $entrevistaDT){
+$this->AlterarTextoJor($entrevistaDT,$idtextojor,$idtextojor);
 
+}
 
+public function excluirEntrevista($idtextojor, $tipotexto){
+  $this->ExcluirTexto($idtextojor,$tipotexto);
+}
 
 
 }

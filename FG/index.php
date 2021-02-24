@@ -1,17 +1,20 @@
 <?php
 
   
-define('WWW_ROOT',dirname(__FILE__));
-define('DS',DIRECTORY_SEPARATOR);
-require_once(WWW_ROOT.DS.'autoloader.php');
-use FG\BL\{TextoJornalistico as texto,Entrevista as Conversa,Secao};
+// define('WWW_ROOT',dirname(__FILE__));
+// define('DS',DIRECTORY_SEPARATOR);
+// require_once(WWW_ROOT.DS.'autoloader.php');
+use FG\BL\{TextoJornalistico ,Entrevista as Conversa,Secao};
+require 'StartLoader/autoloader.php';
+
+
 //use \ArrayObject;
 
 //use FG\DAL\CrudSecao;
 
 
 
-$texto = new texto();
+$texto = new TextoJornalistico();
 
 $texto->setTitulo("Eu sou burro<br/>");
 echo $texto->GetTitulo();
