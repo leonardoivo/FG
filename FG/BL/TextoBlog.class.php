@@ -7,10 +7,11 @@ namespace FG\BL{
  use FG\DTO\TipotextoDTO;
  use FG\LO\TextoJornalisticoLO;
 class TextoBlog extends TextoJornalistico{
-public $textoblog;
+public $texto;
 public $autorblog;
 public $tipotexto;
 public $tituloblog;
+public $dtpublicacao;
 
 public function __construct()
 {
@@ -31,8 +32,8 @@ public function CriarTextoBlog(){
     $blogDT = new TextoJornalisticoDTO();
     $blogDT->titulo=$this->tituloblog;
     $blogDT->autor=$this->autorblog;
-    $blogDT->datapublicacao=$this->dataentrevista;
-    $blogDT->texto=$this->textoblog;
+    $blogDT->datapublicacao=$this->dtpublicacao;
+    $blogDT->texto=$this->texto;
     $this->CriarTexto($blogDT);
   
 }

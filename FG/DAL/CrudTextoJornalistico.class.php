@@ -87,8 +87,7 @@ namespace FG\DAL{
           $resultado= $this->conexao->query("select * from TextoJornalistico where idtipotexto={$tipotexto} and texto={$parametrosBusca}");
           $textoJornalistico = new TextoJornalisticoLO();
            while($linha=$resultado->fetch(PDO::FETCH_ASSOC)){
-            $textoJornalisticoDT= new TextoJornalisticoDTO();
-              $textoJornalistico->add($textoJornalisticoDT);
+           
               $textoJornalisticoDT= new TextoJornalisticoDTO();
               $textoJornalisticoDT->idtextojor=$linha['idtextojor'];
               $textoJornalisticoDT->texto=$linha['texto'];
@@ -108,6 +107,7 @@ namespace FG\DAL{
         
         public function GravarTexto(TextoJornalisticoDTO $CadastroAssociadoDT){
          $this->efetivar=$this->conexao->prepare("");
+
          $this->efetivar->bindParam("nome", $CadastroAssociadoDT->nome);
          $this->efetivar->execute();
            //echo "\nPDOStatement::errorInfo():\n";
