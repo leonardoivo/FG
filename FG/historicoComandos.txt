@@ -1,0 +1,710 @@
+    1  unams -a
+    2  uname -a
+    3  cat /etc/issue
+    4  sudo apt-get install apache2
+    5  sudo apt-get install php
+    6  sudo apt-get install php8
+    7  sudo apt-get install php-dev
+    8  sudo apt-get install php-dbg
+    9  sudo apt-get install geany
+   10  sudo apt-get install gedit
+   11  wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+   12  sudo apt-get update;   sudo apt-get install -y apt-transport-https &&   sudo apt-get update &&   sudo apt-get install -y dotnet-sdk-5.0
+   13  sudo apt-get update;   sudo apt-get install -y apt-transport-https &&   sudo apt-get update &&   sudo apt-get install -y aspnetcore-runtime-5.0
+   14  sudo apt-get install -y dotnet-runtime-5.0
+   15  sudo dpkg -i packages-microsoft-prod.deb
+   16  sudo apt-get install -y dotnet-runtime-5.0
+   17  sudo apt-get install  dotnet-runtime-5.0
+   18  sudo apt-get install -y dotnet-runtime
+   19  sudo dpkg --purge packages-microsoft-prod && sudo dpkg -i packages-microsoft-prod.deb
+   20  sudo apt-get update
+   21  sudo apt-get install -y gpg
+   22  wget -O - https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o microsoft.asc.gpg
+   23  sudo mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
+   24  wget https://packages.microsoft.com/config/ubuntu/{os-version}/prod.list
+   25  sudo mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
+   26  sudo chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
+   27  sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list
+   28  sudo apt-get update;   sudo apt-get install -y apt-transport-https &&   sudo apt-get update &&   sudo apt-get install -y {dotnet-package}
+   29  sudo apt-get install  dotnet-runtime-5.0
+   30  sudo apt-get install  mysql
+   31  sudo apt-get install  mariadb
+   32  sudo apt-get install  gedit
+   33  wget -O - https://repo.fortinet.com/repo/ubuntu/DEB-GPG-KEY | sudo apt-key add -
+   34  deb [arch = amd64] https://repo.fortinet.com/repo/ubuntu/ / bionic multiverse
+   35  sudo apt-get update
+   36  sudo gedit /etc/apt/sources.list.d/additional-repositories.list
+   37  sudo apt-get upda
+   38  ls
+   39  tar -xvfz tsetup.2.5.7.tar.xz
+   40  tar -xvf tsetup.2.5.7.tar.xz
+   41  ls
+   42  cd Telegram
+   43  ls
+   44  Telegram
+   45  ./Telegram
+   46  sudo apt-get install  wine
+   47  sudo apt-get install software-propriedades-common dirmngr apt-transport-https
+   48  sudo apt-get install software-properties-common dirmngr apt-transport-https
+   49  sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+   50  sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://mirror.ufro.cl/mariadb/repo/10.5/ubuntu focal main'
+   51  sudo apt update
+   52  sudo apt install mariadb-server
+   53  sudo apt-get install mono-complete
+   54  sudo apt-get install 
+   55  sudo apt-get install mono-deve
+   56  sudo apt-get install mono-devel
+   57  sudo apt-get install phpmyadmin
+   58  mysq -u root
+   59  mysql -u 
+   60  mysql -u leonardo
+   61  sudo apt-get install javac
+   62  sudo apt-get install jdk
+   63  sudo apt-get install java
+   64  java
+   65  java -v
+   66  java v
+   67  java -version
+   68  javac -version
+   69  sudo apt install openjdk-11-jdk-headless
+   70  cd /var
+   71  sudo chmod 777 www -R
+   72  lsusb
+   73  sudo apt install alsa-base      
+   74  sudo apt install alsa-utils
+   75  sudo apt install apache2-data
+   76  sudo apt install apparmor
+   77  sudo apt install ii  dotnet-sdk-3.0                                              3.0.103-1                                                   amd64        Microsoft .NET Core SDK 3.0.103
+   78  sudo apt install ebook2epub
+   79  sudo apt install ebook2odt
+   80  sudo apt install 
+   81  sudo apt install geoclue
+   82  sudo apt install gimp
+   83  sudo apt install git
+   84  sudo apt install gnuradio
+   85  sudo apt install office20
+   86  sudo apt install Office20
+   87  sudo apt install vlc
+   88  sudo apt install audacity
+   89  sudo apt install php-cli  
+   90  sudo apt install php-codecoverage 
+   91  sudo apt install php-common
+   92  sudo apt install  php-composer-semver 
+   93  sudo apt install php-composer-spdx-licenses 
+   94  sudo apt install  php-dev
+   95  sudo apt install php-doctrine-instantiator 
+   96  sudo apt install php-FPM
+   97  sudo apt install php-fpm
+   98  sudo apt install php*
+   99  sudo apt install php-*
+  100  sudo apt install php-file-iterator 
+  101  sudo apt install php-json-schema 
+  102  sudo apt install php-mbstring 
+  103  sudo apt insta
+  104  sudo apt install php-xdebug
+  105  php-token-stream
+  106  sudo apt install php-token-stream
+  107  sudo apt install php-xml   
+  108  sudo apt install php8.0
+  109  sudo apt install vl4-dvb
+  110  sudo apt install youtube-dl 
+  111  sudo apt install nodejs
+  112  sudo apt install monodevelop
+  113  sudo apt install mono
+  114  sudo apt install java*
+  115  sudo apt install net-tools 
+  116  sudo apt install ntfs-3g
+  117  sudo apt install openvpn
+  118  sudo apt install oracle-java14-installer 
+  119  sudo apt install p7zip  
+  120  sudo apt install pcmciautils
+  121  sudo apt install  monodevelop 
+  122  sudo apt install  mono-complete 
+  123  sudo apt install  mono*
+  124  sudo apt install  libqt*
+  125  sudo apt install  libmono*
+  126  sudo apt install  libjs*
+  127  sudo apt install  
+  128  sudo apt install  composer
+  129  sudo apt install cups
+  130  sudo apt install dtv*
+  131  sudo apt install gstreamer*
+  132  sudo apt install libao*
+  133  sudo apt install libboost*
+  134  sudo apt install lua*
+  135  sudo apt install lua
+  136  sudo apt install lua*
+  137  sudo apt install lua5*
+  138  sudo add-apt-repository ppa:telemidia/daily-builds
+  139  sudo apt-get updat
+  140  sudo apt install ginga*
+  141  ginga
+  142  sudo apt-get install ginga-itv
+  143  sudo dpkg install l
+  144  sudo dpkg install -l
+  145  sudo dpkg  -l
+  146  sudo apt-get install -l
+  147  sudo dpkg install l
+  148  dpkg --help
+  149  sudo dpkg ––configure –a
+  150  sudo dpkg --configure -a
+  151  sudo apt-get -f install
+  152  sudo apt-get install ginga-itv
+  153  sudo apt-get -f install
+  154  sudo dpkg --configure -a
+  155  sudo apt-get -f install
+  156  java
+  157  java -v
+  158  java -version
+  159  sudo add-apt-repository ppa:telemidia/daily-builds
+  160  sudo apt-get update
+  161  sudo apt-get install ginga-itv
+  162  ginga
+  163  deb https://deb.opera.com/opera-stable/ stable non-free #Opera Browser (final releases)
+  164  sudo add-apt-repository 'deb https://deb.opera.com/opera-stable/ stable non-free #Opera Browser (final releases)'
+  165  sudo apt-get u
+  166  sudo apt-get install Cairo
+  167  sudo apt-get install libcairo
+  168  sudo apt-get install libcairo*
+  169  sudo apt-get install GLib*
+  170  sudo apt-get install Pango*
+  171  sudo apt-get install FontConfig*
+  172  sudo apt-get install GStreamer*
+  173  sudo apt-get install -y pkg-config dpkg-dev dh-autoreconf libltdl-dev liblua5.2-dev libglib2.0-dev libpango1.0-dev librsvg2-dev libsoup2.4-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libfontconfig1-dev libgtk-3-dev gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav nclua -qq
+  174  sudo apt-get install ginga-itv
+  175  sudo apt-get remove ginga
+  176  sudo apt-get install ginga-itv
+  177  mysql
+  178  mysql -u root
+  179  mysql -u root -p
+  180  mysql -u 
+  181  mysql 
+  182  create user
+  183  mysql -u leonardo
+  184  mysql -u root -p
+  185  mysql --help
+  186  mysql -u root -p
+  187  mysql.server start
+  188  node
+  189  node -v
+  190  node -h
+  191  npm
+  192  sudo apt install npm
+  193  sudo mysql_secure_installation
+  194  mysql -u root -p
+  195  cd /etc/php
+  196  ls
+  197  cd 7.4
+  198  ls
+  199  cd apache2
+  200  ls
+  201  sudo gedit php.ini
+  202  sudo service apache2 restart
+  203  sudo gedit php.ini
+  204  cd ..
+  205  ls
+  206  cdcli
+  207  cd cli
+  208  sudo gedit php.ini
+  209  sudo service apache2 restart
+  210  sudo apt install xine
+  211  cd ~
+  212  php -i >configuracao.txt
+  213  sudo apt-get install php-dev autoconf automake
+  214  tar -xvzf xdebug-3.0.2.tgz
+  215  cd xdebug-3.0.2
+  216  sudo phpize
+  217  sudo snap install office20
+  218  sudo apt-get install snap
+  219  sudo snap install office20
+  220  snap
+  221  sudo apt install snapd
+  222  $ sudo rm /etc/apt/preferences.d/nosnap.pref
+  223  apt install snapd
+  224  sudo snap install 
+  225  $ sudo snap install snap-store
+  226  lsusb
+  227  apt install snapd
+  228  sudo apt-get install gparted
+  229  lsusb
+  230  uname -a
+  231  cd /var/www/html
+  232  cd TrilhosDoRioCadastro
+  233  git status
+  234  git branch
+  235  git pull
+  236  git branch
+  237  git checkout origin/main
+  238  git pull
+  239  git branch
+  240  git stash
+  241  git pull
+  242  cd ..
+  243  cd TDR
+  244  git checkout origin/main
+  245  git branch
+  246  git pull
+  247  git stash
+  248  cd ..
+  249  cd FG
+  250  git pull
+  251  git stash
+  252  git branch
+  253  git pull
+  254  ssh -T leonardoivo@github.com
+  255  ssh -T git@github.com
+  256  ssh-add -l -E sha256
+  257  ssh-keygen -t ed25519 -C "leonardo.ivo22@gmail.com"
+  258  eval "$(ssh-agent -s)"
+  259  Agent pi
+  260  eval "$(ssh-agent -s)"
+  261  ssh-keygen -t ed25519 -C "leonardo.ivo22@gmail.com"11957
+  262  eval "$(ssh-agent -s)"
+  263  ssh-add ~/.ssh/id_ed12109
+  264  ssh-add ~/.ssh/id_ed25519
+  265  cd ~/.ssh/
+  266  ls
+  267  cd known_hosts
+  268  cd ..
+  269  ls
+  270  $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  271  ssh-keygen -t rsa -b 4096 -C "leonardo.ivo22@gmail.com"
+  272  $ eval "$(ssh-agent -s)"
+  273  eval "$(ssh-agent -s)"
+  274  $ sudo apt-get install xclip
+  275  sudo apt-get install xclip
+  276  $ xclip -selection clipboard < ~/.ssh/id_ed25519.pub
+  277  cd ~/.ssh/
+  278  ls
+  279  $ xclip -selection clipboard < ~/.ssh/id_rsa.pub
+  280  xclip -selection clipboard < ~/.ssh/id_rsa.pub
+  281  pwd
+  282  cd /var
+  283  cd ww
+  284  cd www
+  285  cd html
+  286  cd FG
+  287  git pull
+  288  git statuw
+  289  git status
+  290  git branch
+  291  sudo apt install ia32-libs
+  292  sudo apt install libsane:i386
+  293  sudo apt install libsnmp35:i386
+  294  sudo apt-get clean.
+  295  sudo apt-get clean
+  296  sudo apt-get install -f.
+  297  sudo apt-get install -f
+  298  sudo dpkg --configure -a
+  299  sudo rm /var/lib/apt/lists/* -vf
+  300  sudo apt-get update
+  301  sudo apt-get --fix-broken install
+  302  sudo apt-get clean
+  303  sudo apt-get install -f
+  304  sudo apt install ia32-libs
+  305  sudo apt install gqrx
+  306  sudo apt install gqrx-sdr
+  307  awk
+  308  sudo apt-get install libusb-1.0-0-dev
+  309  sudo apt-get install cmake
+  310  sudo apt-get install build-essential
+  311  cd ~
+  312  pwd
+  313  git clone git://git.osmocom.org/rtl-sdr.git
+  314  cd rtl-sdr/
+  315  mkdir build
+  316  cd build
+  317  cmake ../ -DINSTALL_UDEV_RULES=ON
+  318  sudo apt install cmake
+  319  cmake ../ -DINSTALL_UDEV_RULES=ON
+  320  make
+  321  sudo make install
+  322  sudo ldconfig
+  323  sudo cp ../rtl-sdr.rules /etc/udev/rules.d/
+  324  lsusb
+  325  rtl_test -t
+  326  sudo make install-udev-rules
+  327  ls
+  328  cd v4l-dvb
+  329  make
+  330  ls
+  331  sudo apt install v4l-dvb
+  332  sudo apt install v4l
+  333  cd ..
+  334  wget http://www.wi-bw.tfh-wildau.de/~pboettch/home/files/dvb-usb-dib0700-1.20.fw
+  335  git
+  336  sudo apt-get install dvb-apps
+  337  sudo cp dvb-usb-dib0700-1.20.fw /lib/firmware
+  338  locate ch_freq.conf
+  339  scan ch_freq.conf > channels.conf
+  340  locate ch_freq.conf
+  341  pwd
+  342  scan ch_freq.conf > channels.conf
+  343  git clone git://linuxtv.org/media_build.git]
+  344  git clone git://linuxtv.org/media_build.git
+  345  sudo rm -r media_build -R
+  346  git clone git://linuxtv.org/media_build.git
+  347  git clone --depth=1 git://linuxtv.org/media_build.git
+  348  cd media_build 
+  349  ./build
+  350  sudo ./build
+  351  gedit drivers/media/video/foo.c
+  352  ls
+  353  cd ..
+  354  sudo rm -r media_build -R
+  355  git clone --depth=1 git://linuxtv.org/media_build.git
+  356  cd media
+  357  cd media_build 
+  358  ./build --main-git
+  359  sudo apt install Proc::ProcessTable
+  360  cd ..
+  361  scan ch_freq.conf > channels.conf
+  362  sudo apt install mercurial
+  363  lsusb
+  364  sudo apt install dvb-apps
+  365  sudo rm -r v4l-dvb -R
+  366  hg clone http://linuxtv.org/hg/v4l-dvb
+  367  cd v4l-dvb
+  368  sudo make
+  369  sudo make clean
+  370  make
+  371  sudo make
+  372  sudo make clean
+  373  cd ..
+  374  sudo apt install vl4
+  375  scan ch_freq.conf > channels.conf
+  376  cd media_build 
+  377  ./build --main-git
+  378  scan ch_freq.conf > channels.conf
+  379  cd ..
+  380  scan ch_freq.conf > channels.conf
+  381  pwd
+  382  scan ch_freq1.conf > channels.conf
+  383  scan ch_freq.conf > channels.conf
+  384  scan ch_freq1.conf > channels.conf
+  385  cd /etc
+  386  cd /php
+  387  cd php
+  388  ls
+  389  sudo apt-get install php8
+  390  sudo apt install software-properties-common
+  391  sudo add-apt-repository ppa:ondrej/php
+  392  sudo apt update
+  393  sudo apt install php8.0 libapache2-mod-php8.0
+  394  sudo systemctl restart apache2
+  395  sudo apt update
+  396  sudo apt install php8.0-fpm libapache2-mod-fcgid
+  397  sudo a2enmod proxy_fcgi setenvif
+  398  sudo a2enconf php8.0-fpm
+  399  sudo a2enconf php7.0-fpm
+  400  sudo a2enconf php7-fpm
+  401  sudo a2enconf php7.0-fpm
+  402  sudo a2enconf php7.4-fpm
+  403  sudo apt install php8.0-fpm
+  404  sudo a2enconf php8.0-fpm
+  405  php -i >configphp8.txt
+  406  sudo gedit /etc/php/8.0/cli/php.ini
+  407  ls
+  408  cd 8.0
+  409  ls
+  410  cd cli
+  411  ls
+  412  cd conf.d
+  413  ls
+  414  cd ..
+  415  cd 7.4
+  416  ls
+  417  cd cli
+  418  ls
+  419  cd conf.d
+  420  lçs
+  421  ls
+  422  more 20-xdebug.ini
+  423  cd ..
+  424  sudo apt install php-debug
+  425  sudo apt install php-xdebug
+  426  cd ..
+  427  cd 8.0
+  428  ls
+  429  cd apache2
+  430  ls
+  431  sudo gedit php.ini
+  432  cd ..
+  433  cd cli
+  434  ls
+  435  sudo gedit php.ini
+  436  sudo service apache2 restart
+  437  ls
+  438  cd conf.d
+  439  ls
+  440  more 20-xdebug.ini
+  441  sudo gedti 20-xdebug.ini
+  442  sudo gedit 20-xdebug.ini
+  443  cd ..
+  444  cd apach2
+  445  cd apache2
+  446  cd confi.d
+  447  cd conf.d
+  448  sudo gedit 20-xdebug.ini
+  449  cd ..
+  450  cd 7.4
+  451  ls
+  452  cd cli
+  453  cd conf.d
+  454  sudo gedit 20-xdebug.ini
+  455  cd .
+  456  cd ...
+  457  cd ..
+  458  ls
+  459  cd ..
+  460  cd apache2
+  461  sudo gedit 20-xdebug.ini
+  462  cd conf.d
+  463  sudo gedit 20-xdebug.ini
+  464  sudo service apache2 restart
+  465  cd ..
+  466  cd 8.0
+  467  ls
+  468  cd mods-available
+  469  ls
+  470  more xdebug.ini
+  471  cd ..
+  472  ls
+  473  cd apache2
+  474  ls
+  475  sudo gedit php.ini
+  476  sudo service apache2 restart
+  477  sudo gedit php.ini
+  478  cd ..
+  479  cd cli
+  480  sudo gedit php.ini
+  481  sudo service apache2 restart
+  482  cd ..
+  483  ls
+  484  cd fpm
+  485  ls
+  486  cd php.ini
+  487  sudo gedit php.ini
+  488  ls
+  489  cd conf.d
+  490  ls
+  491  sudo gedit 20-xdebug.ini
+  492  cd ..
+  493  ls
+  494  cd ..
+  495  ls
+  496  cd mods-available
+  497  ls
+  498  cd ..
+  499  ls
+  500  sudo service apache2 stop
+  501  sudo service apache2 start
+  502  ls
+  503  cd 8.0
+  504  ls
+  505  cd apache2
+  506  ls
+  507  sudo gedit php.ini
+  508  cd ~
+  509  php -i >configphp8.txt
+  510  gedit configphp8.txt
+  511  apt-get install php-dev autoconf automake
+  512  sudo apt-get install php-dev autoconf automake
+  513  cd xdebug-3.0.2
+  514  phpize
+  515  sudo phpize
+  516  ./configure
+  517  make
+  518  sudo cp modules/xdebug.so /usr/lib/php/20200930
+  519  sudo /etc/php/8.0/cli/php.ini
+  520  sudo gedit /etc/php/8.0/cli/php.ini
+  521  rtl
+  522  rtl_test -s
+  523  rtl_test -s 2400000
+  524  vscode://vscode.github-authentication/did-authenticate?windowid=1&code=c7e32b8b6435d03578f0&state=2a6469ea-69eb-46b4-b7e4-22e5e03e96db
+  525  javac -v
+  526  javac -version
+  527  java -version
+  528  dotnet
+  529  dotnet -v
+  530  dotnet -version
+  531  dotnet --version
+  532  sudo apt install gnupg ca-certificates
+  533  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+  534  echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+  535  sudo apt update
+  536  sudo apt install mono-devel
+  537  sudo apt install mono-develelop
+  538  https://docs.microsoft.com/pt-br/sql/linux/sql-server-linux-setup?view=sql-server-2017
+  539  wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+  540  sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
+  541  sudo apt install default-jre
+  542  sudo apt install snapd
+  543  cd /etc/apt/preferences.d/
+  544  ls
+  545  sudo rm /etc/apt/preferences.d/nosnap.pref
+  546  sudo apt update
+  547  sudo apt install snapd
+  548  sudo snap install eclipse --classic
+  549  eclipse
+  550  mono
+  551  mono-devel
+  552  mono-developer
+  553  sudo apt-get install monodevelop
+  554  sudo apt install apt-transport-https dirmngr
+  555  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+  556  echo "deb https://download.mono-project.com/repo/ubuntu vs-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-vs.list
+  557  sudo apt update
+  558  sudo apt-get install monodevelop
+  559  sudo apt update
+  560  sudo snap install office20
+  561  eclipse
+  562  cd ~
+  563  eclipse
+  564  sudo snap install office20
+  565  office20
+  566  sudo snap install office20
+  567  apt install snapd
+  568  O20
+  569  O20.Word
+  570  locate office20
+  571  npm install -g yo
+  572  sudo npm install -g yo
+  573  npm install -g yo generator-aspnet gulp bower
+  574  sudo npm install -g yo generator-aspnet gulp bower
+  575  sudo npm ls gulp-util
+  576  npm ls gulp-util
+  577  npm issues gulp-util
+  578  npm install -g yo generator-aspnet gulp bower
+  579  sudo apt install snes9
+  580  sudo apt install snes9x
+  581  flatpak install --from https://flathub.org/repo/appstream/com.snes9x.Snes9x.flatpakref
+  582  sudo apt install gens
+  583  sudo apt install Gens
+  584  sudo apk add flatpak
+  585  sudo add-apt-repository ppa:alexlarsson/flatpak
+  586  sudo npm install -g gulp
+  587  npm ls gulp-util
+  588  sudo snap install office20
+  589  snap help refresh
+  590  snap
+  591  snap Office20
+  592  office20
+  593  office
+  594  flatpak install --user https://flathub.org/repo/appstream/io.gitlab.o20.word.flatpakref
+  595  sudo snap install unofficial-webapp-office
+  596  flatpak install --user https://flathub.org/repo/appstream/com.wps.Office.flatpakref
+  597  sudo dpkg --add-architecture i386
+  598  sudo apt-get update
+  599  uname -a
+  600  cd /var/www/html/FG
+  601  git commit -m "atualizações e evoluções gerais"
+  602  ls
+  603  cd FG
+  604  git commit -m "atualizações e evoluções gerais"
+  605  git status
+  606  git add *
+  607  git commit -m "atualizações e evoluções gerais"
+  608  sudo apt-get install tomcat
+  609  sudo apt-get install tomcat8
+  610  git commit -m "atualizações e evoluções gerais"
+  611  git status
+  612  ls
+  613  git --help
+  614  git branch
+  615  git commit -m "atualizações e evoluções gerais"
+  616  cd ..
+  617  git commit -m "atualizações e evoluções gerais"
+  618  cd ..
+  619  ls
+  620  cd TDR
+  621  git commit -m "atualizações e evoluções gerais"
+  622  lsusb
+  623  fdisk -l
+  624  sudo fdisk -l
+  625  sudo su
+  626  reboot
+  627  lsusb
+  628  cd /var/www
+  629  cd fg
+  630  cd FG
+  631  ls
+  632  cd html
+  633  cd FG
+  634  git
+  635  git branch
+  636  git commit -m "atualizações gerais"
+  637  git init
+  638  git config user.name "leonardo.ivo"
+  639  git config user.email "leonardo.ivo"
+  640  ls
+  641  cd FG
+  642  ls
+  643  cd ..
+  644  git config user.email "leonardo.ivo22@gmail.com"
+  645  git add *
+  646  git commit -m "atualizações gerais"
+  647  git push
+  648  cd ..
+  649  cd TDR
+  650  git init
+  651  git config user.name "leonardo.ivo"
+  652  git config user.email "leonardo.ivo22@gmail.com"
+  653  git add *
+  654  git commit -m "atualizações gerais"
+  655  git push
+  656  git branch
+  657  git push
+  658  git pull
+  659  git fetch origin
+  660  git reset --hard origin/master
+  661  git pull
+  662  git add *
+  663  git commit -m "atualizações gerais"
+  664  git push
+  665  sudo apt install -y qtcreator build-essential qt5-default qt5-doc qt5-doc-html qtbase5-doc-html qtbase5-examples qtdeclarative5-dev libglu1-mesa-dev qtwebengine5-*
+  666  sudo snap install flutter --classic
+  667  flutter sdk-path
+  668  sudo snap install wine
+  669  sudo snap install playonlinux
+  670  sudo apt unstall wine
+  671  sudo apt install wine
+  672  sudo apt install playonlinux
+  673  sudo apt-get install software-properties-common
+  674  sudo add-apt-repository ppa: team-xbmc / ppa
+  675  sudo add-apt-repository ppa:team-xbmc/ppa
+  676  sudo apt-get update
+  677  sudo apt-get install kodi
+  678  sudo dpkg --add-architecture i386 
+  679  wget -nc https://dl.winehq.org/wine-builds/winehq.key
+  680  sudo apt-key add winehq.key
+  681  sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
+  682  sudo apt update
+  683  sudo apt install --install-recommends winehq-stable
+  684  wine
+  685  sudo apt get install calibre
+  686  sudo apt-get install calibre
+  687  sudo apt-get install sigil
+  688  lsusb
+  689  cd /var/www/html
+  690  cd FG
+  691  git branch
+  692  git commit -m "atualizações gerais"
+  693  git add * 
+  694  git commit -m "atualizações gerais 2"
+  695  git push
+  696  git remote
+  697  git remote origin
+  698  cd /var/www/html/FG
+  699  git pull
+  700  python
+  701  python3
+  702  cd /var/www/html/FG
+  703  cd FG
+  704  ls
+  705  git pull
+  706  git branch
+  707  git remote
+  708  git remote origin
+  709  history ->historicoComandos.txt
+  710  history >historicoComandos.txt
