@@ -4,7 +4,7 @@
 // define('WWW_ROOT',dirname(__FILE__));
 // define('DS',DIRECTORY_SEPARATOR);
 // require_once(WWW_ROOT.DS.'autoloader.php');
-use FG\BL\{TextoJornalistico ,Entrevista as Conversa,Secao};
+use FG\BL\{TextoJornalistico ,TextoBlog,Entrevista as Conversa,Secao};
 require 'StartLoader/autoloader.php';
 
 
@@ -15,6 +15,16 @@ require 'StartLoader/autoloader.php';
 
 
 $texto = new TextoJornalistico();
+$textoBlog = new TextoBlog();
+$textoBlog->texto="um texto de teste";
+$textoBlog->autorblog="eu mesmo";
+$textoBlog->tipotexto=3;
+$textoBlog->tituloblog="texto de teste";
+$textoBlog->dtpublicacao=getdate();
+$textoBlog->CriarTextoBlog();
+
+
+
 
 $texto->setTitulo("Eu sou burro<br/>");
 echo $texto->GetTitulo();
