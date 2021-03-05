@@ -105,10 +105,19 @@ namespace FG\DAL{
            return $textoJornalistico;
            }
         
-        public function GravarTexto(TextoJornalisticoDTO $CadastroAssociadoDT){
-         $this->efetivar=$this->conexao->prepare("");
+        public function GravarTexto(TextoJornalisticoDTO $texto){
+         $this->efetivar=$this->conexao->prepare("INSERT INTO textojornalistico( texto, datapublicacao, idusuario, autor, id_secao, idcoluna, idtipotexto, titulo, subtitulo) VALUES ( :texto, :datapublicacao, :idusuario, :autor, :id_secao, :idcoluna, :idtipotexto, :titulo, :subtitulo)");
 
-         $this->efetivar->bindParam("nome", $CadastroAssociadoDT->nome);
+         $this->efetivar->bindParam("texto", $texto->texto);
+         $this->efetivar->bindParam("datapublicacao", $texto->datapublicacao);
+         $this->efetivar->bindParam("idusuario", $texto->idusuario);
+         $this->efetivar->bindParam("autor", $texto->autor);
+         $this->efetivar->bindParam("id_secao", $texto->id_secao);
+         $this->efetivar->bindParam("idcoluna", $texto->idcoluna);
+         $this->efetivar->bindParam("idtipotexto", $texto->idtipotexto);
+         $this->efetivar->bindParam("titulo", $texto->titulo);
+         $this->efetivar->bindParam("subtitulo", $texto->subtitulo);
+
          $this->efetivar->execute();
            //echo "\nPDOStatement::errorInfo():\n";
            $arr = $this->efetivar->errorInfo();
@@ -117,8 +126,17 @@ namespace FG\DAL{
         }
 
         public function AlterarTexto(TextoJornalisticoDTO $texto, $idtextojor){
-         $this->efetivar=$this->conexao->prepare("");
-         $this->efetivar->bindParam("idtextojor", $idtextojor);
+         $this->efetivar=$this->conexao->prepare("UPDATE textojornalistico SET texto=:texto,datapublicacao=:datapublicacao,idusuario=:idusuario,autor=:autor,id_secao=:id_secao,idcoluna=:idcoluna,idtipotexto=:idtipotexto,titulo=:titulo,subtitulo=:subtitulo WHERE idtextojor=:idtextojor");
+         $this->efetivar->bindParam("idtextojor", $idtextojor); 
+         $this->efetivar->bindParam("texto", $texto->texto);
+         $this->efetivar->bindParam("datapublicacao", $texto->datapublicacao);
+         $this->efetivar->bindParam("idusuario", $texto->idusuario);
+         $this->efetivar->bindParam("autor", $texto->autor);
+         $this->efetivar->bindParam("id_secao", $texto->id_secao);
+         $this->efetivar->bindParam("idcoluna", $texto->idcoluna);
+         $this->efetivar->bindParam("idtipotexto", $texto->idtipotexto);
+         $this->efetivar->bindParam("titulo", $texto->titulo);
+         $this->efetivar->bindParam("subtitulo", $texto->subtitulo);
          $this->efetivar->execute();
            //echo "\nPDOStatement::errorInfo():\n";
            $arr = $this->efetivar->errorInfo();
