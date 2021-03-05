@@ -1,28 +1,37 @@
 <?php
-
-  
-// define('WWW_ROOT',dirname(__FILE__));
+ // define('WWW_ROOT',dirname(__FILE__));
 // define('DS',DIRECTORY_SEPARATOR);
 // require_once(WWW_ROOT.DS.'autoloader.php');
 use FG\BL\{TextoJornalistico ,TextoBlog,Entrevista as Conversa,Secao};
+use FG\LO\TextoJornalisticoLO;
 require 'StartLoader/autoloader.php';
 
 
 //use \ArrayObject;
 
 //use FG\DAL\CrudSecao;
-
+$textoBlogLO = new TextoJornalisticoLO();
 
 
 $texto = new TextoJornalistico();
 $textoBlog = new TextoBlog();
-$textoBlog->texto="um texto de teste";
+$textoBlog->texto="um texto de teste 3";
 $textoBlog->autorblog="eu mesmo";
-$textoBlog->tipotexto=3;
-$textoBlog->tituloblog="texto de teste";
-$textoBlog->dtpublicacao=getdate();
+$textoBlog->tipotexto=2;
+$textoBlog->tituloblog="texto de teste 3";
+$textoBlog->dtpublicacao=date("Y-m-d");
+
 $textoBlog->CriarTextoBlog();
 
+$textoBlogLO=$textoBlog->listarBlogs();
+foreach($textoBlogLO-> getTextoJornalistico() as $BlogTexto){
+  echo $BlogTexto->titulo."<br/>";
+  echo $BlogTexto->subtitulo."<br/>";
+  echo $BlogTexto->autor."<br/>";
+  echo $BlogTexto->datapublicacao."<br/>";
+
+
+}
 
 
 

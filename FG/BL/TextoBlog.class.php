@@ -32,6 +32,7 @@ public function CriarTextoBlog(){
     $blogDT = new TextoJornalisticoDTO();
     $blogDT->titulo=$this->tituloblog;
     $blogDT->autor=$this->autorblog;
+    $blogDT->idtipotexto=$this->tipotexto;
     $blogDT->datapublicacao=$this->dtpublicacao;
     $blogDT->texto=$this->texto;
     $this->CriarTexto($blogDT);
