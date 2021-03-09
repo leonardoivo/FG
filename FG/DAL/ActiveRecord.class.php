@@ -62,11 +62,7 @@ public function __unset($parameter)
     {
         $this->content = json_decode($json);
     }
-    public function fromJson(string $json)
-    {
-        $this->content = json_decode($json);
-    }
-
+    
     }    
 }
 ?>
