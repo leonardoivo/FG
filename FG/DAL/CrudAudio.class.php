@@ -32,9 +32,9 @@ $AudiosLT= new AudiosDTO();
 
 return $AudioLO;
 }
-public function listarAudiosPorId()
+public function listarAudiosPorId($id_audio)
 {
-    $resultado= $this->conexao->query("select * from audios");
+    $resultado= $this->conexao->query("select * from audios where id_audio={$id_audio}");
 $AudioLO= new AudiosLO();
 while($linha=$resultado->fetch(PDO::FETCH_ASSOC)){
 $AudiosLT= new AudiosDTO();

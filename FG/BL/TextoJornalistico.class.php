@@ -55,6 +55,12 @@ public function Criar()
   $textojornalistico->GravarTexto($this->texto);
 }
 
+public function ListarGeral(){
+   $textojornalistico = new CrudTextoJornalistico();
+   $listTexto = new TextoJornalisticoLO();
+   $listTexto= $textojornalistico->listar();
+   return  $listTexto;
+}
 public function ListarTextos($tipotexto){
     $textojornalistico = new CrudTextoJornalistico();
     $listTexto = new TextoJornalisticoLO();

@@ -1,7 +1,10 @@
 <?php
+
+namespace FG\DAL{
 use FG\DAL\Crud;
 use \PDO;
-namespace FG\DAL{
+use FG\DTO\VideosDTO;
+use FG\LO\VideosLO;
 class CrudVideo{
     private $conexao;
     private $efetivar;
@@ -11,14 +14,85 @@ class CrudVideo{
  {
     $this->conexao = new Crud();
  }
- public function listarVideos(){}
- public function listarVideoPorId()
- {
-     # code...
+ public function listarVideos(){
+    $resultado= $this->conexao->query("select * from videos");
+    $videoLO= new videosLO();
+    while($linha=$resultado->fetch(PDO::FETCH_ASSOC)){
+    $videosLT= new videosDTO();
+            $videosLT->id_video=$linha['id_video'];
+            $videosLT->nome_video=$linha['nome_video'];
+            $videosLT->tipo_video=$linha['tipo_video'];
+            $videosLT->descricao=$linha['descricao'];
+            $videosLT->autor=$linha['autor'];
+            $videosLT->formato=$linha['formato'];
+            $videosLT->id_acervo=$linha['id_acervo'];
+            $videosLT->data_de_inclusao=$linha['data_de_inclusao'];
+            $videoLO->add($videosLT);
+    
+
+
+
  }
- public function Gravar(){}
- public function Alterar(){}
- public function Excluir(){}
+ public function listarVideoPorId($id_video)
+ {
+    $resultado= $this->conexao->query("select * from videos where id_video={$id_video}");
+    $videoLO= new videosLO();
+    while($linha=$resultado->fetch(PDO::FETCH_ASSOC)){
+     $videosLT= new videosDTO();
+        $videosLT->id_video=$linha['id_video'];
+        $videosLT->nome_video=$linha['nome_video'];
+        $videosLT->tipo_video=$linha['tipo_video'];
+        $videosLT->descricao=$linha['descricao'];
+        $videosLT->autor=$linha['autor'];
+        $videosLT->formato=$linha['formato'];
+        $videosLT->id_acervo=$linha['id_acervo'];
+        $videosLT->data_de_inclusao=$linha['data_de_inclusao'];
+        $videoLO->add($videosLT);
+
+     }
+
+ return $videoLO;
+
+}
+ public function Gravar(){
+    $this->efetivar=$this->conexao->prepare("");
+    $this->efetivar->bindParam("nome_video",$video->nome_video);
+    $this->efetivar->bindParam("tipo_video",$video->tipo_video);
+    $this->efetivar->bindParam("descricao",$video->descricao);
+    $this->efetivar->bindParam("autor",$video->autor);
+    $this->efetivar->bindParam("formato",$video->formato);
+    $this->efetivar->bindParam("id_acervo",$video->id_acervo);
+    $this->efetivar->bindParam("data_de_inclusao",$video->data_de_inclusao);
+    $this->efetivar->execute();
+    
+     //echo "\nPDOStatement::errorInfo():\n";
+     $arr = $this->efetivar->errorInfo();
+     //print_r($arr);
+
+ }
+ public function Alterar(){
+    $this->efetivar=$this->conexao->prepare("");
+    $this->efetivar->bindParam("id_video",$video->$id_video);
+    $this->efetivar->bindParam("nome_video",$video->nome_video);
+    $this->efetivar->bindParam("tipo_video",$video->tipo_video);
+    $this->efetivar->bindParam("descricao",$video->descricao);
+    $this->efetivar->bindParam("autor",$video->autor);
+    $this->efetivar->bindParam("formato",$video->formato);
+    $this->efetivar->bindParam("id_acervo",$video->id_acervo);
+    $this->efetivar->bindParam("data_de_inclusao",$video->data_de_inclusao);
+    $this->efetivar->execute();
+ //echo "\nPDOStatement::errorInfo():\n";
+ $arr = $this->efetivar->errorInfo();
+ //print_r($arr);
+
+ }
+ public function Excluir(){
+    $this->tabela= "delete from videos where id_video= ? ";  
+    $this->efetivar=$this->conexao->prepare($this->tabela);
+    $this->efetivar->bindParam("id_video",$id_video);
+    $this->efetivar->execute();
+
+ }
 
 
 }
