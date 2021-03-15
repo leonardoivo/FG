@@ -41,7 +41,9 @@ class CrudSecao extends Crud{
     $this->efetivar=$this->conexao->prepare("insert into secoes (nomeSecao) values (:nomeSecao)");
     $this->efetivar->bindParam("nomeSecao",$this->nome_secao);
     $this->efetivar->execute();
-    
+      //echo "\nPDOStatement::errorInfo():\n";
+      $arr = $this->efetivar->errorInfo();
+      //print_r($arr);
     
     }
     
@@ -52,7 +54,9 @@ class CrudSecao extends Crud{
         $this->efetivar->bindValue(1,$this->nome_secao);
         $this->efetivar->bindValue(2,$this->id_secao);
         $this->efetivar->execute();
-    
+      //echo "\nPDOStatement::errorInfo():\n";
+      $arr = $this->efetivar->errorInfo();
+      //print_r($arr);
     }
     
     public function ExcluirSecao($id_secao){
