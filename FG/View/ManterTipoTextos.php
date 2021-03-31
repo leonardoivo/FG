@@ -1,7 +1,7 @@
 <?php
-use FG\DTO;
-use FG\LO;
-use FG\BL;
+use FG\DTO\TipotextoDTO;
+use FG\LO\TipoTextoLO;
+use FG\BL\ManterTipoTexto;
 require 'StartLoader/autoloader.php';
 
 ?>
