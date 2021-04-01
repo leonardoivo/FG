@@ -14,6 +14,7 @@ class CrudVideo{
  {
     $this->conexao = new Crud();
  }
+
  public function listarVideos(){
     $resultado= $this->conexao->query("select * from videos");
     $videoLO= new videosLO();
@@ -28,11 +29,11 @@ class CrudVideo{
             $videosLT->id_acervo=$linha['id_acervo'];
             $videosLT->data_de_inclusao=$linha['data_de_inclusao'];
             $videoLO->add($videosLT);
-    
-
-
-
+         }
+         
+ return $videoLO;
  }
+
  public function listarVideoPorId($id_video)
  {
     $resultado= $this->conexao->query("select * from videos where id_video={$id_video}");
@@ -54,7 +55,8 @@ class CrudVideo{
  return $videoLO;
 
 }
- public function Gravar(){
+
+ public function Gravar(VideosDTO  $video){
     $this->efetivar=$this->conexao->prepare("");
     $this->efetivar->bindParam("nome_video",$video->nome_video);
     $this->efetivar->bindParam("tipo_video",$video->tipo_video);
@@ -70,9 +72,10 @@ class CrudVideo{
      //print_r($arr);
 
  }
- public function Alterar(){
+
+ public function Alterar(VideosDTO  $video,$id_video){
     $this->efetivar=$this->conexao->prepare("");
-    $this->efetivar->bindParam("id_video",$video->$id_video);
+    $this->efetivar->bindParam("id_video",$id_video);
     $this->efetivar->bindParam("nome_video",$video->nome_video);
     $this->efetivar->bindParam("tipo_video",$video->tipo_video);
     $this->efetivar->bindParam("descricao",$video->descricao);
@@ -86,7 +89,8 @@ class CrudVideo{
  //print_r($arr);
 
  }
- public function Excluir(){
+
+ public function Excluir($id_video){
     $this->tabela= "delete from videos where id_video= ? ";  
     $this->efetivar=$this->conexao->prepare($this->tabela);
     $this->efetivar->bindParam("id_video",$id_video);
@@ -95,6 +99,6 @@ class CrudVideo{
  }
 
 
-}
+   }
 }
 ?>
