@@ -4,10 +4,34 @@ use FG\DTO\AcervoDTO;
 use FG\LO\AcervoLO;
 use FG\DAL\CrudAcervo;
 class ManterAcervo{
-public function ListarAcervo(){}
-public function ListarAcervoPorID(){}
-public function EditarAcervo(){}
-public function ExcluirAcervo(){}
+
+    private $acervo;
+    public function __construct()
+    {
+        $acervo = new CrudAcervo();
+    }
+
+public function ListarAcervo(){
+    $lAcervo = new AcervoLO();
+    $lAcervo =  $this->acervo->ListarAcervo();
+    return $lAcervo;
+}
+public function ListarAcervoPorID($id_acervo){
+    $lAcervo = new AcervoLO();
+    $lAcervo =  $this->acervo->ListarAcervoPorID($id_acervo);
+    return $lAcervo;
+}
+public function CriarAcervo(AcervoDTO $acervoDT){
+    $this->acervo->CriarAcervo($acervoDT);
+}
+public function EditarAcervo($acervoDT,$id_acervo){
+   $this->acervo->AlterarAcervo($acervoDT,$id_acervo);
+
+}
+public function ExcluirAcervo($id_acervo){
+    $this->acervo->ExcluirAcervo($id_acervo);
+
+}
 
 
 }

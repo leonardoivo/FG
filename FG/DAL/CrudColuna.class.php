@@ -34,7 +34,22 @@ class Crudcoluna extends Crud{
         return $colunas;
         }
     
+        public function ListarcolunaPorID($id_coluna){
     
+            $resultado=$this->conexao->query("select * from colunas where id_coluna={$id_coluna}");
+             $colunas = new ColunasLO();
+            while($linha=$resultado->fetch(PDO::FETCH_ASSOC))
+            {
+            $coluna = new ColunasDTO();
+            $coluna->idcoluna=$linha['id_coluna'];
+            $coluna->nomeColuna=$linha['nomeColuna'];
+            $coluna->id_secao=$linha['id_secao'];
+            $coluna->id_usuario=$linha['id_usuario'];
+            $colunas->add($coluna);
+            }
+            return $colunas;
+            }
+        
     
     public function Gravarcoluna($nomecoluna){
     $this->nome_coluna=$nomecoluna;

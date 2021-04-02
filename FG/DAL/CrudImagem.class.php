@@ -29,6 +29,7 @@ class CrudImagem{
         $imagemDT->data_de_inclusao=$linha['data_de_inclusao'];
 
        $LsImagens->add($imagemDT);
+    }
 
    return $LsImagens;
 

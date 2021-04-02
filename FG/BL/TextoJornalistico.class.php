@@ -11,7 +11,7 @@ protected $texto;
 protected $dataTexto;
 protected $autor;
 protected $tipotexto;
-    
+private $textoJor;    
 public function setTitulo($t){
 
    $this->titulo=$t;
@@ -36,6 +36,7 @@ public function setTexto($text){
 
  public function __construct()
 {
+   $textoJor = new CrudTextoJornalistico();
    $arguments = func_get_args();
    $numberOfArguments = func_num_args();
            
@@ -45,38 +46,38 @@ public function setTexto($text){
  }
  
   public function CriarTexto(TextoJornalisticoDTO $texto){
-  $textojornalistico = new CrudTextoJornalistico();
-  $textojornalistico->GravarTexto($texto);
+ 
+  $this->textoJor->GravarTexto($texto);
 
    }
 public function Criar()
 {
-  $textojornalistico = new CrudTextoJornalistico();
-  $textojornalistico->GravarTexto($this->texto);
+ 
+  $this->textoJor->GravarTexto($this->texto);
 }
 
 public function ListarGeral(){
-   $textojornalistico = new CrudTextoJornalistico();
+  
    $listTexto = new TextoJornalisticoLO();
-   $listTexto= $textojornalistico->listar();
+   $listTexto= $this->textoJor->listar();
    return  $listTexto;
 }
 public function ListarTextos($tipotexto){
-    $textojornalistico = new CrudTextoJornalistico();
+   
     $listTexto = new TextoJornalisticoLO();
-    $listTexto= $textojornalistico->listarTipoTexto($tipotexto);
+    $listTexto= $this->textoJor->listarTipoTexto($tipotexto);
     return  $listTexto;
  }
 
  public function AlterarTextoJor(TextoJornalisticoDTO $texto,$idtextojor){
-    $textojornalistico = new CrudTextoJornalistico();
-    $textojornalistico->AlterarTexto($texto,$idtextojor);
+   
+    $this->textoJor->AlterarTexto($texto,$idtextojor);
 
 }
 
  public function ExcluirTexto($idtextojor,$tipotexto){
-      $textojornalistico = new CrudTextoJornalistico();
-      $textojornalistico->excluir($tipotexto,$idtextojor);
+     
+      $this->textoJor->excluir($tipotexto,$idtextojor);
    }
 
     }

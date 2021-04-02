@@ -8,37 +8,32 @@ use FG\LO\SecoesLO;
 class Secao{
     private $id_secao=0;
     private $nome_secao="";
+    private $Secao;
  
+    public function __construct(){
+     $Secao = new CrudSecao();
+
+    }
  
 public function CriarSecao($nomesecao){
-    $gravarSecao= new CrudSecao();
     $this->nome_secao=$nomesecao;
-    $gravarSecao->GravarSecao($this->nome_secao);
+    $this->Secao->GravarSecao($this->nome_secao);
  
 }
 public function ListarSecao(){
     
-    $secoes = new CrudSecao();
     $lSecoesLO = new SecoesLO();
-    $lSecoesLO = $secoes->ListarSecao();
-    foreach ($lSecoesLO->getSecoes() as $k => $secao) {
-    
-        echo $secao->id_secao;
-        echo $secao->nome_secao."<br/>";
-      
-      }
-
+    $lSecoesLO = $this->Secao->ListarSecao();
+      return $lSecoesLO ;
     }
 
 public function alterarSecao($id_secao,$nomesecao){
-   $secao = new CrudSecao();
-   $secao->AlterarSecao($nomesecao,$id_secao);
+   $this->Secao->AlterarSecao($nomesecao,$id_secao);
     
 }
 
 public function ExcluirSecao($id_secao){
-$secao= new CrudSecao();
-$secao->ExcluirSecao($id_secao);
+$this->Secao->ExcluirSecao($id_secao);
 }
 
 }
