@@ -1,7 +1,7 @@
 <?php
-use FG\DTO;
-use FG\LO;
-use FG\BL;
+use FG\DTO\VideosDTO;
+use FG\LO\VideosLO;
+use FG\BL\ManterVideos;
 require 'StartLoader/autoloader.php';
 
 ?>

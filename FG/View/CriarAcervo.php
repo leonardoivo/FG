@@ -1,7 +1,7 @@
 <?php
-use FG\DTO;
-use FG\LO;
-use FG\BL;
+use FG\DTO\AcervoDTO;
+use FG\LO\AcervoLO;
+use FG\BL\ManterAcervo;
 require 'StartLoader/autoloader.php';
 
 ?>

@@ -1,6 +1,6 @@
 <?php
-use FG\DTO;
-use FG\LO;
-use FG\BL;
+use FG\DTO\AudiosDTO;
+use FG\LO\AudiosLO;
+use FG\BL\ManterAudios;
 require 'StartLoader/autoloader.php';
 ?>

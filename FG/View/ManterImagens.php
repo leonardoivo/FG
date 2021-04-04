@@ -1,7 +1,7 @@
 <?php
-use FG\DTO;
-use FG\LO;
-use FG\BL;
+use FG\DTO\ImagensDTO;
+use FG\LO\ImagensLO;
+use FG\BL\ManterImagens;
 require 'StartLoader/autoloader.php';
 
 
