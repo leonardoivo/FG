@@ -36,7 +36,7 @@ public function setTexto($text){
 
  public function __construct()
 {
-   $textoJor = new CrudTextoJornalistico();
+   $this->textoJor = new CrudTextoJornalistico();
    $arguments = func_get_args();
    $numberOfArguments = func_num_args();
            
