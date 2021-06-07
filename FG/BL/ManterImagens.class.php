@@ -8,7 +8,7 @@ class ManterImagens{
     
     public function __construct()
     {
-        $imagens = new CrudImagem();
+        $this->imagens = new CrudImagem();
     }
 
     public function ListarImagem(){

@@ -7,7 +7,7 @@ class ManterAudios{
     private $audio;
     public function __construct()
     {
-        $audio = new CrudAudio();
+      $this->audio = new CrudAudio();
     }
     public function ListarAudio(){
         $lAudios = new AudiosLO();

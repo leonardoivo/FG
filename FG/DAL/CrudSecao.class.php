@@ -28,7 +28,7 @@ class CrudSecao extends Crud{
         {
         $secao = new SecoesDTO();
         $secao->id_secao=$linha['id_secao'];
-        $secao->nome_secao=$linha['nomeSecao'];
+        $secao->nomeSecao=$linha['nomeSecao'];
         $secoes->add($secao);
         }
         return $secoes;
@@ -38,7 +38,7 @@ class CrudSecao extends Crud{
     
     public function GravarSecao($nomeSecao){
     $this->nome_secao=$nomeSecao;
-    $this->efetivar=$this->conexao->prepare("insert into secoes (nomeSecao) values (:nomeSecao)");
+    $this->efetivar=$this->conexao->prepare("insert into secoes(nomeSecao) values(:nomeSecao)");
     $this->efetivar->bindParam("nomeSecao",$this->nome_secao);
     $this->efetivar->execute();
       //echo "\nPDOStatement::errorInfo():\n";

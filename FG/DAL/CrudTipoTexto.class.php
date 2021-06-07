@@ -28,7 +28,7 @@ class CrudTipoTexto extends Crud{
         {
         $TipoTexto = new TipotextoDTO();
         $TipoTexto->idtipotexto=$linha['idtipotexto'];
-        $TipoTexto->nome_TipoTexto=$linha['tiptextonome'];
+        $TipoTexto->tiptextonome=$linha['tiptextonome'];
         $secoes->add($TipoTexto);
         }
         return $secoes;

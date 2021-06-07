@@ -5,13 +5,13 @@ use FG\DTO\SecoesDTO;
 use \ArrayObject;
 use FG\LO\SecoesLO;
 
-class Secao{
+class ManterSecao{
     private $id_secao=0;
     private $nome_secao="";
     private $Secao;
  
     public function __construct(){
-     $Secao = new CrudSecao();
+     $this->Secao = new CrudSecao();
 
     }
  

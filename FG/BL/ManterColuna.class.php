@@ -2,12 +2,12 @@
 namespace FG\BL{
 use FG\DTO\ColunasDTO;
 use FG\LO\ColunasLO;
-use FG\DAL\Crudcoluna;
+use FG\DAL\CrudColuna;
 class ManterColuna{
     private $coluna;
     public function __construct()
     {
-        $coluna = new Crudcoluna();
+        $this->coluna = new CrudColuna();
     }
     public function ListarColuna(){
      $lColuna = new ColunasLO();

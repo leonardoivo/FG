@@ -9,7 +9,7 @@ class ManterTipoTexto{
 
     public  function __construct()
     {
-        $tipoTexto = new CrudTipoTexto();
+        $this->tipoTexto = new CrudTipoTexto();
     }
 
 

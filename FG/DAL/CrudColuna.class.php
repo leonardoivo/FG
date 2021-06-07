@@ -6,7 +6,7 @@ use FG\LO\ColunasLO;
 use \ArrayObject;
 use \PDO;
 
-class Crudcoluna extends Crud{
+class CrudColuna extends Crud{
 
     private $conexao;
     private $efetivar;

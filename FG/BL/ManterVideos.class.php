@@ -7,7 +7,7 @@ class ManterVideos{
     private $video;
     public function __construct()
     {
-        $video = new CrudVideo();
+        $this->video = new CrudVideo();
     }
     public function ListarVideo(){
         $lVideos = new VideosLO();

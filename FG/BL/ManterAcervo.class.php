@@ -8,7 +8,7 @@ class ManterAcervo{
     private $acervo;
     public function __construct()
     {
-        $acervo = new CrudAcervo();
+        $this->acervo = new CrudAcervo();
     }
 
 public function ListarAcervo(){

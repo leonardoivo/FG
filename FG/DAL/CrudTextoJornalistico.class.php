@@ -106,7 +106,7 @@ namespace FG\DAL{
            }
         
         public function GravarTexto(TextoJornalisticoDTO $texto){
-         $this->efetivar=$this->conexao->prepare("INSERT INTO textojornalistico( texto, datapublicacao, idusuario, autor, id_secao, idcoluna, idtipotexto, titulo, subtitulo) VALUES ( :texto, :datapublicacao, :idusuario, :autor, :id_secao, :idcoluna, :idtipotexto, :titulo, :subtitulo)");
+         $this->efetivar=$this->conexao->prepare("INSERT INTO TextoJornalistico(texto, datapublicacao, idusuario, autor, id_secao, idcoluna, idtipotexto, titulo, subtitulo) VALUES ( :texto, :datapublicacao, :idusuario, :autor, :id_secao, :idcoluna, :idtipotexto, :titulo, :subtitulo)");
 
          $this->efetivar->bindParam("texto", $texto->texto);
          $this->efetivar->bindParam("datapublicacao", $texto->datapublicacao);
