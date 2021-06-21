@@ -9,10 +9,10 @@ $Acervo = new ManterAcervo();
 //DTOs
 $AcervoDT = new AcervoDTO();
 //LO
-$lAcervoLO = new AcervoLO();
+$AcervoLO = new AcervoLO();
 //uso
 
-$lAcervoLO = $Acervo->ListarAcervo();
+$AcervoLO = $Acervo->ListarAcervo();
 
 
 ?>
@@ -24,7 +24,7 @@ $lAcervoLO = $Acervo->ListarAcervo();
 <body>
 <table>
 <?
-	foreach ($lAcervoLO->getAcervo() as $Acervotxt){
+	foreach ($AcervoLO->getAcervo() as $Acervotxt){
 		echo "<tr><td>".$Acervotxt->idAcervo."</td><td>.$Acervotxt->nome_acervo.</td></tr>";
 
 }
@@ -39,12 +39,8 @@ Nome da seção: <input type="text" name="Acervo">
 </html>
 <?
 $AcervoDT->nomeAcervo=isset($_POST['Acervo'])?$_POST['Acervo']:"";
-$Acervo->CriarAcervo($AcervoDT->nomeAcervo);
-?>
+if($AcervoDT->nomeAcervo!=""){
+	$Acervo->CriarAcervo($AcervoDT->nomeAcervo);
 
-
-
-
-
-
+}
 ?>

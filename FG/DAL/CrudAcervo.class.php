@@ -2,6 +2,7 @@
 namespace FG\DAL{
     use FG\DAL\Crud;
     use FG\DTO\AcervoDTO;
+    use FG\LO\AcervoLO;
 
 class CrudAcervo extends Crud{
         
@@ -15,31 +16,36 @@ class CrudAcervo extends Crud{
         }
         
         public function ListarAcervo(){
-        
             $resultado=$this->conexao->query("select * from acervo");
-            
+            $lAcervoLO = new AcervoLO();
+
             while($linha=$resultado->fetch(\PDO::FETCH_ASSOC)){
-            
-            $this->id_acervo=$linha['id_acervo'];
-            $this->nome_acervo=$linha['nome_acervo'];
-            $this->id_textojor=$linha['id_textojor'];
-            $this->Descricao=$linha['Descricao'];
-            $this->iDataDeCriacao=$linha['DataDeCriacao'];
+            $acervoDT = new AcervoDTO();
+            $acervoDT->id_acervo=$linha['id_acervo'];
+            $acervoDT->nome_acervo=$linha['nome_acervo'];
+            $acervoDT->id_textojor=$linha['id_textojor'];
+            $acervoDT->Descricao=$linha['Descricao'];
+            $acervoDT->iDataDeCriacao=$linha['DataDeCriacao'];
+            $lAcervoLO->add($acervoDT);
             }
-            
+            return $lAcervoLO;
             }
             public function ListarAcervoPorID($id_acervo){
         
                 $resultado=$this->conexao->query("select * from acervo where id_acervo={$id_acervo}");
                 
+                $lAcervoLO = new AcervoLO();
+
                 while($linha=$resultado->fetch(\PDO::FETCH_ASSOC)){
-                
-                $this->id_acervo=$linha['id_acervo'];
-                $this->nome_acervo=$linha['nome_acervo'];
-                $this->id_textojor=$linha['id_textojor'];
-                $this->Descricao=$linha['Descricao'];
-                $this->iDataDeCriacao=$linha['DataDeCriacao'];
+                $acervoDT = new AcervoDTO();
+                $acervoDT->id_acervo=$linha['id_acervo'];
+                $acervoDT->nome_acervo=$linha['nome_acervo'];
+                $acervoDT->id_textojor=$linha['id_textojor'];
+                $acervoDT->Descricao=$linha['Descricao'];
+                $acervoDT->iDataDeCriacao=$linha['DataDeCriacao'];
+                $lAcervoLO->add($acervoDT);
                 }
+                return $lAcervoLO;
                 
                 }
             public function CriarAcervo(AcervoDTO $acervoDT){

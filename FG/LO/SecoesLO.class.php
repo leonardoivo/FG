@@ -6,11 +6,11 @@ use FG\DTO\SecoesDTO;
 class SecoesLO{
 private $secoes;
 
-function  __construct()
-{
-    $this->secoes= new ArrayObject();
-}
-public function add(SecoesDTO $secao)
+    function  __construct()
+    {
+      $this->secoes= new ArrayObject();
+    }
+    public function add(SecoesDTO $secao)
     {
         //$this->secoes->offsetSet($secao->getTitulo(),$secao); //Função porfora77
         $this->secoes->append($secao); //adiciona um indice automatico
