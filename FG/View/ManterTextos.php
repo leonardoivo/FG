@@ -1,5 +1,4 @@
 <?php
-use TrilhosDorioCadastro\BL\{ManterAssociado as ManterBL,ControleAcesso};
 use FG\BL\{TextoJornalistico ,CrudSecao,CrudUsuario,};
 use FG\LO\{TextoJornalisticoLO,SecoesLO,UsuariosLO};
 use FG\DTO\{TextoJornalisticoDTO,SecoesDTO,UsuariosDTO};
