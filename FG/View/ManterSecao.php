@@ -39,3 +39,12 @@ Nome da seção: <input type="text" name="secao">
 $secaoDT->nomeSecao=isset($_POST['secao'])?$_POST['secao']:"";
 $secao->CriarSecao($secaoDT->nomeSecao);
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+</form>
+</body>
+</html>

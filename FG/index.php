@@ -1,6 +1,9 @@
 <?php
 use FG\BL\{TextoJornalistico ,Secao};
-use FG\LO\TextoJornalisticoLO;
+use FG\LO\{TextoJornalisticoLO,SecaoLO};
+use FG\LO\{TextoJornalisticoDTO,SecaoDTO};
+
+
 require 'StartLoader/autoloader.php';
 $textoGeraisLO = new TextoJornalisticoLO();
 
@@ -19,3 +22,13 @@ foreach($textoGeraisLO-> getTextoJornalistico() as $BlogTexto){
 }
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+</body>
+</html>

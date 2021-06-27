@@ -16,3 +16,12 @@ foreach ($lTipotexto->getTipoTexto() as $tipoTxtDT){
 }
 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+</form>
+</body>
+</html>
