@@ -68,7 +68,13 @@ public function ListarTextos($tipotexto){
     $listTexto= $this->textoJor->listarTipoTexto($tipotexto);
     return  $listTexto;
  }
+public function ListarTotais(){
+$totais=0;
+$totais=$this->textoJor->ListarTotaisTextos();
 
+return $totais;
+
+}
  public function AlterarTextoJor(TextoJornalisticoDTO $texto,$idtextojor){
    
     $this->textoJor->AlterarTexto($texto,$idtextojor);

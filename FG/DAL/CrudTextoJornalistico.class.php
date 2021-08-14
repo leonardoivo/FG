@@ -72,18 +72,39 @@ namespace FG\DAL{
         return $textoJornalistico;
         }
 
+        public function ListarTotaisTextos(){
+           $totais=0;
+           $resultado = $this->conexao->query("select * from TextoJornalistico order by idtextojor asc");
+           $resultado->execute();
+           $totais = $resultado->rowCount();
+           return $totais;
+        }
 
+        public function ListarTextoPaginacao($paginaCorrente,$linhasPorPagina){
+
+         $resultado = $this->conexao->query("select * from TextoJornalistico order by idtextojor limit $paginaCorrente,$linhasPorPagina");
+         $LTextoJornalistico = new TextoJornalisticoLO();
+         while ($linha=$resultado->fetch(PDO::FETCH_ASSOC)){
+           $textoJornalisticoDT = new TextoJornalisticoDTO();
+           $textoJornalisticoDT->idtextojor=  $linha['idtextojor'];
+           $textoJornalisticoDT->texto= $linha['texto'];
+           $textoJornalisticoDT->datapublicacao=  $linha['datapublicacao'];
+           $textoJornalisticoDT->idusuario= $linha['idusuario'];
+           $textoJornalisticoDT->autor= $linha['autor'];
+           $textoJornalisticoDT->id_secao= $linha['id_secao'];
+           $textoJornalisticoDT->idcoluna=  $linha['idcoluna'];
+           $textoJornalisticoDT->idtipotexto=$linha['idtipotexto'];
+           $textoJornalisticoDT->titulo =$linha['titulo'];
+           $textoJornalisticoDT->subtitulo= $linha['subtitulo'];
+           $LTextoJornalistico->add($textoJornalisticoDT);
+         }
+        
+        return  $LTextoJornalistico;
+
+        }
         
         public function listarPorBusca($tipotexto,$parametrosBusca){
-        //  $resultado = array();
-         
-
-        
-          // $this->tabela= "select * from TextoJornalistico where idtipotexto=? and texto=?";  
-         //   $this->conexao->prepare($this->tabela);
-         //   $this->conexao->bindValue(1,$tipotexto);
-         //   $this->conexao->bindValue(2,$parametrosBusca);
-         //   $this->conexao->execute();
+      
           $resultado= $this->conexao->query("select * from TextoJornalistico where idtipotexto={$tipotexto} and texto={$parametrosBusca}");
           $textoJornalistico = new TextoJornalisticoLO();
            while($linha=$resultado->fetch(PDO::FETCH_ASSOC)){
