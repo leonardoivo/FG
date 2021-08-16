@@ -75,6 +75,13 @@ $totais=$this->textoJor->ListarTotaisTextos();
 return $totais;
 
 }
+
+ public function ListarTextoComPaginacao($paginaCorrente,$linhasPorPagina){
+
+   $LlistarGeral = new TextoJornalisticoLO();
+   $LlistarGeral=$this->textoJor->ListarTextoPaginacao($paginaCorrente,$linhasPorPagina);
+   return $LlistarGeral;
+ }
  public function AlterarTextoJor(TextoJornalisticoDTO $texto,$idtextojor){
    
     $this->textoJor->AlterarTexto($texto,$idtextojor);

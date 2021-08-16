@@ -22,9 +22,18 @@ class ControleAcesso{
         $liberar= $veracesso->VerificarLoginSenha($login,$senha);    
         return $liberar;
         }
-    
-}
+        public function ObterPaginaCorrente($linhasPorPagina,$numero_pagina){
+        $paginaCorrente=0;
+        $paginaCorrente=($linhasPorPagina*$numero_pagina)-$linhasPorPagina;
 
+        return $paginaCorrente;
+        }
+    public function ObterTotalDePaginas($TotalLinhas,$linhasPorPagina){
+        $totalPagina=0;
+        $totalPagina=ceil($TotalLinhas/$linhasPorPagina);
+        return $totalPagina;
+    }
+}
 }
 
 ?>

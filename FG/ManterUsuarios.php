@@ -1,15 +1,13 @@
 <?php
-use FG\BL\{TextoJornalistico ,ManterSecao,ControleAcesso};
-use FG\LO\{TextoJornalisticoLO,SecoesLO};
-use FG\LO\{TextoJornalisticoDTO,SecaoDTO};
+use FG\BL\{ManterUsuario ,ManterSecao,ControleAcesso};
+use FG\LO\{UsuariosLO,SecoesLO};
+use FG\LO\{UsuariosDTO,SecaoDTO};
 
 
 require 'StartLoader/autoloader.php';
-$textoGeraisLO = new TextoJornalisticoLO();
-$Lsecao = new SecoesLO();
-$texto = new TextoJornalistico();
-$textoGeral = new TextoJornalistico();
-$secao = new ManterSecao();
+$UsuariosLO = new UsuariosLO();
+$texto = new ManterUsuario();
+$Usuario = new ManterUsuario();
 $Controle= new ControleAcesso();
 
 
@@ -27,11 +25,10 @@ $retorno=0;
 $paginaAtual=0;
 $numero_pagina=(isset($_GET['pagina']))?$_GET['pagina']:1;
 
-$TotalLinhas=$textoGeral->ListarTotais();
+$TotalLinhas=$Usuario->ListarTotais();
 $totalPaginas=$Controle->ObterTotalDePaginas($TotalLinhas,$linhasPorPagina);
 $paginaCorrente=$Controle->ObterPaginaCorrente($linhasPorPagina,$numero_pagina);
-$Lsecao = $secao->ListarSecao();
-$textoGeraisLO=$textoGeral->ListarTextoComPaginacao($paginaCorrente,$linhasPorPagina);
+$UsuariosLO=$Usuario->ListarTextoComPaginacao($paginaCorrente,$linhasPorPagina);
 ?>
 
 <!DOCTYPE html>
@@ -40,15 +37,9 @@ $textoGeraisLO=$textoGeral->ListarTextoComPaginacao($paginaCorrente,$linhasPorPa
 
 </head>
 <body>
-  <ul>
-<?
-foreach($Lsecao->getSecoes() as $SecaoDT){
-  echo "<li>".$SecaoDT->nomeSecao."</li>";
-}
-?>
-  </ul>
+
   <?
-foreach($textoGeraisLO-> getTextoJornalistico() as $BlogTexto){
+foreach($UsuariosLO-> getManterUsuario() as $BlogTexto){
   echo $BlogTexto->titulo."<br/>";
   echo $BlogTexto->subtitulo."<br/>";
   echo $BlogTexto->autor."<br/>";
