@@ -36,7 +36,7 @@ namespace FG\BL {
             return $totais;
         }
 
-        public function ListarUsuarioPaginacao($paginaCorrente, $linhasPorPagina)
+        public function a($paginaCorrente, $linhasPorPagina)
         {
 
             $LlistarGeral = new UsuariosLO();
