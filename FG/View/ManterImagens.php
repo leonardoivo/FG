@@ -1,7 +1,9 @@
 <?php
+
 use FG\DTO\ImagensDTO;
 use FG\LO\ImagensLO;
 use FG\BL\ManterImagens;
+
 require 'StartLoader/autoloader.php';
 //DTO
 $imagemDT = new ImagensDTO();
@@ -12,10 +14,13 @@ $imagem = new ManterImagens();
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
 
 </head>
+
 <body>
-</form>
+    </form>
 </body>
+
 </html>

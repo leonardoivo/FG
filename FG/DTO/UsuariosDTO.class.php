@@ -1,6 +1,8 @@
 <?php
-namespace FG\DTO{
-    class UsuariosDTO{
+
+namespace FG\DTO {
+    class UsuariosDTO
+    {
         public  $idusuario;
         public  $nome;
         public  $sobrenome;
@@ -11,8 +13,5 @@ namespace FG\DTO{
         public  $dataCadastramento;
         public  $biografia;
         public  $idtipousuario;
-       
-       }
+    }
 }
-
-?>

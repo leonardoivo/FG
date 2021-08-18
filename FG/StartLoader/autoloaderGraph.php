@@ -8,8 +8,8 @@ function myAutoLoaderGraph($class)
     $base_dir = __DIR__ . '/';
     $pos = strripos($base_dir,  "StartLoader");
 
-    
-    $caminho=  substr($base_dir,0, $pos);
+
+    $caminho =  substr($base_dir, 0, $pos);
 
     // Verifica se a classe chamada usa o prefixo
     $len = strlen($prefix);
@@ -17,14 +17,14 @@ function myAutoLoaderGraph($class)
         // Se não usar o prefixo Foo\bar então retorna false
         return;
     }
-   
+
     // Pega o caminho relativo da classe, ou seja remove o Foo\bar\
     $relative_class = substr($class, $len);
     $pieces = explode("\\", $relative_class);
-    $caminhorelativo = 'Common'.'/'.'PHPlot/'.$pieces[0];
+    $caminhorelativo = 'Common' . '/' . 'PHPlot/' . $pieces[0];
     // Troca os separadores de namespace por separadores de diretorio
     // e adiciona o .php
-   // $file = $base_dir . str_replace('\\', '/', $relative_class) . '.class.php';
+    // $file = $base_dir . str_replace('\\', '/', $relative_class) . '.class.php';
     $file = $caminho . str_replace('\\', '/', $caminhorelativo) . '.php';
 
     // Verifica se o arquivo existe, se existir então inclui ele 
@@ -34,5 +34,3 @@ function myAutoLoaderGraph($class)
 }
 
 spl_autoload_register('myAutoLoaderGraph');
-
-?>

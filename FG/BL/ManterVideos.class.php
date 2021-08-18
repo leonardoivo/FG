@@ -18,6 +18,21 @@ class ManterVideos{
         $lVideos = $this->video->listarVideoPorId($id_video);
 
     }
+    public function ListarTotais()
+    {
+        $totais = 0;
+        $totais = $this->video->ListarTotaisvideos();
+
+        return $totais;
+    }
+
+    public function ListarvideoPaginacao($paginaCorrente, $linhasPorPagina)
+    {
+
+        $LlistarGeral = new videosLO();
+        $LlistarGeral = $this->video->ListarvideosPaginacao($paginaCorrente, $linhasPorPagina);
+        return $LlistarGeral;
+    }
      public function InserirVideos(VideosDTO $videoDT)
      {
         $this->video->Gravar($videoDT);

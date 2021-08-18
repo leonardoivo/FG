@@ -1,13 +1,14 @@
-<?php 
-function autoload_de_teste($Class){
+<?php
+function autoload_de_teste($Class)
+{
     $P = [''];
     $Incluido = null;
 
     foreach ($P as $Pasta) {
-        if(!$Incluido && file_exists(__DIR__ . "/{$Pasta}/{$Class}.class.php") && !is_dir(__DIR__ . "/{$Pasta}/{$Class}.class.php")):
+        if (!$Incluido && file_exists(__DIR__ . "/{$Pasta}/{$Class}.class.php") && !is_dir(__DIR__ . "/{$Pasta}/{$Class}.class.php")) :
             include_once __DIR__ . "/{$Pasta}/{$Class}.class.php";
             $Incluido = true;
-        else:
+        else :
             trigger_error("Erro ao incluir: " . __DIR__ . "/{$Pasta}/{$Class}.class.php");
             die;
         endif;
@@ -15,7 +16,3 @@ function autoload_de_teste($Class){
 }
 
 spl_autoload_register("autoload_de_teste");
-
-
-
-?>

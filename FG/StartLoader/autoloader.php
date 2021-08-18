@@ -6,18 +6,18 @@ function myAutoLoader($class)
 
     // Diretorio aonde ficam as bibliotecas
     $base_dir = __DIR__ . '/';
-     
+
     $pos = strripos($base_dir,  "StartLoader");
 
-    
-    $caminho=  substr($base_dir,0, $pos);
+
+    $caminho =  substr($base_dir, 0, $pos);
     // Verifica se a classe chamada usa o prefixo
     $len = strlen($prefix);
     if (strncmp($prefix, $class, $len) !== 0) {
         // Se não usar o prefixo Foo\bar então retorna false
         return;
     }
-   
+
     // Pega o caminho relativo da classe, ou seja remove o Foo\bar\
     $relative_class = substr($class, $len);
 
@@ -32,5 +32,3 @@ function myAutoLoader($class)
 }
 
 spl_autoload_register('myAutoLoader');
-
-?>

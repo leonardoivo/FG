@@ -1,50 +1,52 @@
 <?php
-namespace FG\BL{
+
+namespace FG\BL {
+
     use FG\DTO\TipotextoDTO;
-use FG\LO\TipoTextoLO;
-use FG\DAL\CrudTipoTexto;
-class ManterTipoTexto{
+    use FG\LO\TipoTextoLO;
+    use FG\DAL\CrudTipoTexto;
 
-    private $tipoTexto;
-
-    public  function __construct()
+    class ManterTipoTexto
     {
-        $this->tipoTexto = new CrudTipoTexto();
+
+        private $tipoTexto;
+
+        public  function __construct()
+        {
+            $this->tipoTexto = new CrudTipoTexto();
+        }
+
+
+        public function ListarTipos()
+        {
+
+            $LTipoTexto = new TipoTextoLO();
+            $LTipoTexto = $this->tipoTexto->ListarTipoTexto();
+            return $LTipoTexto;
+        }
+        public function ListarTiposPorID($id_tipotexto)
+        {
+
+            $LTipoTexto = new TipoTextoLO();
+            $LTipoTexto = $this->tipoTexto->ListarTipoTexto();
+            return $LTipoTexto;
+        }
+        public function AdicionarTipo($tipo)
+        {
+
+            $this->tipoTexto->GravarTipoTexto($tipo);
+        }
+
+        public function EditarTipo($tipo, $id_tipotexto)
+        {
+
+            $this->tipoTexto->AlterarTipoTexto($tipo, $id_tipotexto);
+        }
+
+        public function ExcluirTipo($id_tipotexto)
+        {
+
+            $this->tipoTexto->ExcluirTipoTexto($id_tipotexto);
+        }
     }
-
-
-    public function ListarTipos(){
-    
-     $LTipoTexto = new TipoTextoLO();
-     $LTipoTexto = $this->tipoTexto->ListarTipoTexto();
-     return $LTipoTexto;
-    }
-    public function ListarTiposPorID($id_tipotexto){
-       
-        $LTipoTexto = new TipoTextoLO();
-        $LTipoTexto = $this->tipoTexto->ListarTipoTexto();
-        return $LTipoTexto;
-
-    }
-    public function AdicionarTipo($tipo){
-       
-        $this->tipoTexto->GravarTipoTexto($tipo);
-
-    }
-
-    public function EditarTipo($tipo,$id_tipotexto){
-       
-        $this->tipoTexto-> AlterarTipoTexto($tipo,$id_tipotexto);
-    }
-
-    public function ExcluirTipo($id_tipotexto){
-       
-        $this->tipoTexto->ExcluirTipoTexto($id_tipotexto);
-    }
-
-
-
 }
-
-}
-?>

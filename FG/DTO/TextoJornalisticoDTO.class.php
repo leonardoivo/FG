@@ -1,6 +1,8 @@
 <?php
-namespace FG\DTO{
-    class TextoJornalisticoDTO{
+
+namespace FG\DTO {
+    class TextoJornalisticoDTO
+    {
         public $idtextojor;
         public  $texto;
         public  $datapublicacao;
@@ -11,8 +13,5 @@ namespace FG\DTO{
         public  $idtipotexto;
         public  $titulo;
         public  $subtitulo;
-        }
-        
+    }
 }
-
-?>

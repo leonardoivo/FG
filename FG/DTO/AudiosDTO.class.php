@@ -1,6 +1,8 @@
 <?php
-namespace FG\DTO{
-    class AudiosDTO{
+
+namespace FG\DTO {
+    class AudiosDTO
+    {
         public  $id_audio;
         public  $nome_audio;
         public  $tipo_audio;
@@ -9,8 +11,5 @@ namespace FG\DTO{
         public  $formato;
         public  $id_acervo;
         public  $data_de_inclusao;
-        }
-        
+    }
 }
-
-?>
