@@ -1,8 +1,9 @@
 <?php
 
-use FG\DTO\VideosDTO;
-use FG\LO\VideosLO;
-use FG\BL\ManterVideos;
+
+use FG\BL\{ManterVideos, ManterAcervo};
+use FG\LO\{VideosLO, AcervoLO};
+use FG\DTO\{VideosDTO, AcervoDTO};
 
 require 'StartLoader/autoloader.php';
 //DTO

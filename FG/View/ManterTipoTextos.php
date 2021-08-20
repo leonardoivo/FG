@@ -15,6 +15,9 @@ $tipoTexto = new ManterTipoTexto();
 $lTipotexto = $tipoTexto->ListarTipos();
 
 foreach ($lTipotexto->getTipoTexto() as $tipoTxtDT) {
+   
+    echo "<tr><td>" . $tipoTxtDT->idtipotexto. "</td><td>.$tipoTxtDT->tiptextonome.</td></tr>";
+
 }
 
 ?>
@@ -26,6 +29,9 @@ foreach ($lTipotexto->getTipoTexto() as $tipoTxtDT) {
 </head>
 
 <body>
+<form action="ManterTipoTextos.php" method="post">
+		Tipo de texto: <input type="text" name="tiptextonome">
+		<input type="submit" value="enviar">
     </form>
 </body>
 
