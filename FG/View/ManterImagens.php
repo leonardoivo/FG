@@ -11,7 +11,7 @@ $lImagem = new ImagensLO();
 $lAcervo = new AcervoLO();
 //Instancia
 $imagem = new ManterImagens();
-$acervo = new ManterAcervo()
+$acervo = new ManterAcervo();
 
 $lImagem = $imagem->ListarImagem();
 $lAcervo = $acervo->ListarAcervo();
