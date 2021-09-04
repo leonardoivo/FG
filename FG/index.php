@@ -1,6 +1,6 @@
 <?php
 
-use FG\BL\{TextoJornalistico, ManterSecao, ControleAcesso};
+use FG\BL\{TextoJornalistico, ManterSecao, ControleAcesso,Paginacao};
 use FG\LO\{TextoJornalisticoLO, SecoesLO};
 use FG\LO\{TextoJornalisticoDTO, SecaoDTO};
 
