@@ -2,7 +2,7 @@
 
 use FG\DTO\{TipotextoDTO, TextoJornalisticoDTO};
 use FG\LO\{TipoTextoLO, TextoJornalisticoLO};
-use FG\BL\TextoJornalistico;
+use FG\BL\{TextoJornalistico,ControleAcesso,Paginaçao};
 
 require 'StartLoader/autoloader.php';
 //DTOS
@@ -20,3 +20,5 @@ foreach ($TextoJornalisticoL->getTextoJornalistico() as $textoJor) {
     echo $$textoJor->autor . "<br/>";
     echo $textoJor->datapublicacao . "<br/>";
 }
+
+?>

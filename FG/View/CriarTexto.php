@@ -33,8 +33,9 @@ $colunaLO = $coluna->ListarColuna();
 </head>
 
 <body>
-	<form action="CriarTexto.php" method="post">
+	<form action="ManterTextos.php" method="post">
 		Título:<input type="text" name="titulo" cols="70"> <br />
+		Subtítulo:<input type="text" name="subtitulo" cols="70"> <br />
 
 		Data de publicação:<input type="date" name="data_publicacao"> <br />
 
@@ -78,17 +79,3 @@ $colunaLO = $coluna->ListarColuna();
 </body>
 
 </html>
-<?
-$textoGeralDT->texto =  isset($_POST['texto']) ? $_POST['texto'] : "";
-$textoGeralDT->datapublicacao = date("Y-m-d");
-$textoGeralDT->idusuario;
-$textoGeralDT->autor = isset($_POST['data_publicacao']) ? $_POST['data_publicacao'] : "";
-$textoGeralDT->id_secao = 3;
-$textoGeralDT->idcoluna = 1;
-$textoGeralDT->idtipotexto = 2;
-$textoGeralDT->titulo = isset($_POST['titulo']) ? $_POST['titulo'] : "";;
-$textoGeralDT->subtitulo;
-$textoGeral->CriarTexto($textoGeralDT);
-
-
-?>
