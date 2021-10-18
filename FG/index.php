@@ -33,6 +33,17 @@ $Lsecao = $secao->ListarSecao();
 
 <!DOCTYPE html>
 <html>
+<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="View/img/favicon.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSS-->
+    <link rel="stylesheet" type="text/css" media="screen" href="View/css/bootstrap.min.css" />
+
+    <script src="View/js/BuscaEndereco.js"></script>
+    <script src="View/js/jquery-3.2.1.min.js"></script>
+    <script src="View/js/bootstrap.min.js"></script>
 
 <head>
 

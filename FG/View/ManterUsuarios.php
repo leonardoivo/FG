@@ -1,8 +1,8 @@
 <?php
 
-use FG\BL\{ManterUsuario, ManterSecao, ControleAcesso};
-use FG\LO\{UsuariosLO, SecoesLO};
-use FG\LO\{UsuariosDTO, SecaoDTO};
+use FG\BL\{ManterUsuario, ControleAcesso};
+use FG\LO\{UsuariosLO, PerfilLO};
+use FG\LO\{UsuariosDTO, PerfilDTO};
 
 
 require 'StartLoader/autoloader.php';
