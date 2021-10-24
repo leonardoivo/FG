@@ -1,8 +1,8 @@
 <?php
 
-use FG\DTO\{AcervoDTO, TextoJornalisticoDTO};
-use FG\LO\{AcervoLO, TextoJornalisticoLO};
-use FG\BL\{ManterAcervo, TextoJornalistico};
+use FG\DTO\{AcervoDTO, TextoJornalisticoDTO,TipMidiaDTO};
+use FG\LO\{AcervoLO, TextoJornalisticoLO,TipoMidiaLO};
+use FG\BL\{ManterAcervo, TextoJornalistico,ManterTipoMidia};
 
 require '../StartLoader/autoloader.php';
 //Instâncias
@@ -42,10 +42,16 @@ $TextoJornalisticoL = $TextoAcervo->ListarGeral();
 		Nome do Acervo: <input type="text" name="Acervo">
 		Pertencente á: <select name="tipoTexto">
 			<?
-
+                   
 			foreach ($TextoJornalisticoL->getTextoJornalistico() as $acervotexto) {
-
+             $LtipoMidiaJ = new $tipoMidiaLO();
+			 $tipoMidiaJ = new ManterTipoMidia();
+			 $LtipoMidiaJ = $tipoMidiaJ->ListarTiposPorID($acervotexto->id_tipomedia);
+			 foreach($LtipoMidiaJ->getTipoMidia() as $tipomidiaDT){
 				echo "<option value=\"{$acervotexto->idtextojor}\">{$acervotexto->titulo}</option>";
+
+
+			 }
 			}
 			?>
 		</select>

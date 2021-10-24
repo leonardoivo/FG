@@ -1,13 +1,14 @@
 <?php
 
-use FG\BL\{TextoJornalistico, ManterTipoTexto, ManterColuna, ManterSecao};
-use FG\LO\{TextoJornalisticoLO, SecoesLO, PerfilLO, ColunasLO, TipoTextoLO};
-use FG\DTO\{TextoJornalisticoDTO, SecoesDTO, UsuariosDTO, TipotextoDTO, ColunasDTO, PerfilDTO};
+use FG\BL\{TextoJornalistico, ManterTipoTexto,ManterTipoMidia, ManterColuna, ManterSecao};
+use FG\LO\{TextoJornalisticoLO, SecoesLO, PerfilLO, ColunasLO, TipoTextoLO,TipoMidiaLO};
+use FG\DTO\{TextoJornalisticoDTO, SecoesDTO, UsuariosDTO, TipotextoDTO, TipoMidiaDTO,ColunasDTO, PerfilDTO};
 
 require '../StartLoader/autoloader.php';
 //Instâncias
 $textoGeral = new TextoJornalistico();
 $TipoTexto = new ManterTipoTexto();
+$TipoMidia = new ManterTipoMidia();
 $Secao = new ManterSecao();
 $coluna = new ManterColuna();
 //DTOs
@@ -15,13 +16,19 @@ $textoGeralDT = new TextoJornalisticoDTO();
 $SecaoDT = new SecoesDTO();
 $ColunaDT = new ColunasDTO();
 $tipoTextoDT = new TipoTextoDTO();
+$tipoMidiaDT = new TipoMidiaDTO();
+
 //LO
 $secaoLO = new SecoesLO();
 $colunaLO = new ColunasLO();
 $tipoTextoLO = new TipoTextoLO();
+$tipoMidiaLO = new TipoMidiaLO();
+
 //Combos
 $secaoLO = $Secao->ListarSecao();
 $tipoTextoLO =  $TipoTexto->ListarTipos();
+$tipoMidiaLO =  $TipoMidia->ListarTipos();
+
 $colunaLO = $coluna->ListarColuna();
 
 ?>
@@ -60,6 +67,14 @@ $colunaLO = $coluna->ListarColuna();
 			?>
 		</select>
 		<br />
+		Tipo de Texto: <select name="tipoMidia">
+			<?
+			foreach ($tipoMidiaLO->getTipoMidia() as $tipomidia) {
+
+				echo "<option value=\"{$tipomidia->id_tipomidia}\">{$tipomidia->nome_midia}</option>";
+			}
+			?>
+		</select>
 		<br />
 		Seção do Texto: <select name="secao">
 			<?
