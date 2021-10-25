@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "psr-0": {
+            "": ""
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "easyframework/collections": "2.1.*"
+    }
+}
