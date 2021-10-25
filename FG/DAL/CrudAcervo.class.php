@@ -27,7 +27,9 @@ namespace FG\DAL {
                 $acervoDT->id_acervo = $linha['id_acervo'];
                 $acervoDT->nome_acervo = $linha['nome_acervo'];
                 $acervoDT->Descricao = $linha['Descricao'];
-                $acervoDT->iDataDeCriacao = $linha['DataDeCriacao'];
+                $acervoDT->DataDeCriacao = $linha['DataDeCriacao'];
+                $acervoDT->id_tipomidia = $linha['id_tipomidia'];
+
                 $lAcervoLO->add($acervoDT);
             }
             return $lAcervoLO;
@@ -45,7 +47,10 @@ namespace FG\DAL {
                 $acervoDT->nome_acervo = $linha['nome_acervo'];
                 $acervoDT->id_acervo = $linha['id_acervo'];
                 $acervoDT->Descricao = $linha['Descricao'];
-                $acervoDT->iDataDeCriacao = $linha['DataDeCriacao'];
+                $acervoDT->DataDeCriacao = $linha['DataDeCriacao'];
+                $acervoDT->id_tipomidia = $linha['id_tipomidia'];
+
+                
                 $lAcervoLO->add($acervoDT);
             }
             return $lAcervoLO;
@@ -61,7 +66,9 @@ namespace FG\DAL {
                 $acervoDT->id_acervo = $linha['id_acervo'];
                 $acervoDT->nome_acervo = $linha['nome_acervo'];
                 $acervoDT->Descricao = $linha['Descricao'];
-                $acervoDT->iDataDeCriacao = $linha['DataDeCriacao'];
+                $acervoDT->DataDeCriacao = $linha['DataDeCriacao'];
+                $acervoDT->id_tipomidia = $linha['id_tipomidia'];
+
                 $Lacervo->add($acervoDT);
             }
 
@@ -80,21 +87,23 @@ namespace FG\DAL {
         {
 
 
-            $this->efetivar = $this->conexao->prepare("insert into acervo (nome_acervo,id_acervo,Descricao,DataDeCriacao) values (?,?,?,?)");
+            $this->efetivar = $this->conexao->prepare("insert into acervo (nome_acervo,idtextojor,Descricao,DataDeCriacao,id_tipomidia) values (?,?,?,?,?)");
             $this->efetivar->bindParam("nome_acervo", $acervoDT->nome_acervo);
-            $this->efetivar->bindParam("id_acervo", $acervoDT->id_acervo);
+            $this->efetivar->bindParam("idtextojor", $acervoDT->idtextojor);
             $this->efetivar->bindParam("Descricao", $acervoDT->Descricao);
             $this->efetivar->bindParam("DataDeCriacao", $acervoDT->DataDeCriacao);
+            $this->efetivar->bindParam("id_tipomidia", $acervoDT->id_tipomidia);
             $this->efetivar->execute();
         }
 
         public function AlterarAcervo(AcervoDTO $acervoDT, $id_acervo)
         {
 
-            $this->efetivar = $this->conexao->prepare("update acervo set nome_acervo=:nome_acervo,Descricao:Descricao where id_acervo=?");
+            $this->efetivar = $this->conexao->prepare("update acervo set nome_acervo=:nome_acervo,Descricao:Descricao,id_tipomidia:id_tipomidia where id_acervo=?");
             $this->efetivar->bindParam("nome_acervo", $acervoDT->nome_acervo);
             $this->efetivar->bindParam("Descricao", $acervoDT->Descricao);
             $this->efetivar->bindParam("id_acervo", $acervoDT->id_acervo);
+            $this->efetivar->bindParam("id_tipomidia", $acervoDT->id_tipomidia);
             $this->efetivar->bindParam(2, $acervoDT->id_secao);
             $this->efetivar->execute();
         }

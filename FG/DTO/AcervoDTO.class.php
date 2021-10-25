@@ -7,6 +7,7 @@ namespace FG\DTO {
         public $nome_acervo;
         public $idtextojor;
         public $Descricao;
-        public $DataCriacao;
+        public $DataDeCriacao;
+        public $id_tipomidia;
     }
 }
