@@ -4,8 +4,8 @@ namespace FG\DTO {
     class ColunasDTO
     {
         public  $idcoluna;
-        public  $nomeColuna;
+        public  $nome;
         public $id_secao;
-        public $id_usuario;
+        public $titular_coluna;
     }
 }

@@ -25,9 +25,9 @@ namespace FG\BL {
             $lColuna = $this->coluna->ListarcolunaPorID($id_coluna);
             return $lColuna;
         }
-        public function CriarColuna($nomecoluna)
+        public function CriarColuna(ColunasDTO $ColunaDT)
         {
-            $this->coluna->Gravarcoluna($nomecoluna);
+            $this->coluna->Gravarcoluna($ColunaDT);
         }
         public function EditarColuna($nomecoluna, $id_coluna)
         {

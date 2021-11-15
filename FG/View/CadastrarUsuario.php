@@ -52,10 +52,7 @@ $Controle = new ControleAcesso();
 
   <div class="form-row">
 
-    <div class="form-group col-md-2">
-      <label for="inputCPF">CPF</label>
-      <input type="text" class="form-control" id="cpf" name="cpf"  onkeypress='return SomenteNumero(event)'>
-    </div>
+    
     <div class="form-group col-md-2">
       <label for="inputCPF">Login</label>
       <input type="text" class="form-control" id="login" name="login">
@@ -80,10 +77,6 @@ $Controle = new ControleAcesso();
        <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email">
      </div>
 
-     <div class="form-group col-md-2">
-      <label for="inputCelular">Celular</label>
-      <input type="text" class="form-control" name="celular" id="inputCelular"  onkeypress='return SomenteNumero(event)'>
-     </div>
 
     
      <div class="form-group col-md-6">

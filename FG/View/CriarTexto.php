@@ -92,7 +92,7 @@ $colunaLO = $coluna->ListarColuna();
 			<?
 			foreach ($colunaLO->getColuna() as $colunatxt) {
 
-				echo "<option value=\"{$colunatxt->idcoluna}\">{$colunatxt->nomeColuna}</option>";
+				echo "<option value=\"{$colunatxt->idcoluna}\">{$colunatxt->nome}</option>";
 			}
 			?>
 		</select>

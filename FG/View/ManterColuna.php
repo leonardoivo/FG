@@ -45,7 +45,7 @@ $ColunaLO = $Coluna->ListarColuna();
     <table>
         <?
         foreach ($ColunaLO->getColuna() as $Colunatxt) {
-            echo "<tr><td>" . $Colunatxt->id_Coluna . "</td><td>.$Colunatxt->nomeColuna.</td></tr>";
+            echo "<tr><td>" . $Colunatxt->idcoluna . "</td><td>.$Colunatxt->nome.</td></tr>";
         }
         ?>
     </table>
@@ -61,6 +61,8 @@ $ColunaLO = $Coluna->ListarColuna();
 			?>
 
 		</select>
+           Titular: <input type="text" name="titular_coluna">
+
 		<br />
         <input type="submit" value="enviar">
     </form>
@@ -69,11 +71,12 @@ $ColunaLO = $Coluna->ListarColuna();
 
 </html>
 <?
-$ColunaDT->nomeColuna = isset($_POST['Coluna']) ? $_POST['Coluna'] : "";
+$ColunaDT->nome = isset($_POST['Coluna']) ? $_POST['Coluna'] : "";
 $ColunaDT->id_secao = isset($_POST['secao']) ? $_POST['secao'] : "";
+$ColunaDT->titular_coluna = isset($_POST['titular_coluna']) ? $_POST['titular_coluna'] : "";
 
-if ($ColunaDT->nomeColuna != "") {
-    $Coluna->CriarColuna($ColunaDT->nomeColuna);
+if ($ColunaDT->nome != "") {
+    $Coluna->CriarColuna($ColunaDT);
 }
 ?>
 <!DOCTYPE html>
