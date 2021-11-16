@@ -1,7 +1,7 @@
 <?php
-use TrilhosDorioCadastro\BL\{ManterAssociado as ManterBL};
+use FG\BL\{ManterUsuario};
 require '../StartLoader/autoloader.php';
-$AssociadosLt = new ManterBL();
+$AssociadosLt = new ManterUsuario();
 $Meiospag=$AssociadosLt->ObterTotaisTipoMeioPagJson();
 
 header('Content-Type: application/json; charset=UTF-8');

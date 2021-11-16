@@ -1,5 +1,5 @@
 <?php
-namespace TrilhosDorioCadastro\Common{
+namespace FG\Common{
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;

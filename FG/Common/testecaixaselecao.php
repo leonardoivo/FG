@@ -1,7 +1,7 @@
 <?php
-use TrilhosDorioCadastro\DTO\{CadastroAssociadoDTO as CadastroDTO,CartaoCreditoDTO,AgenciaBancariaDTO,BancoDTO,TipoPagamentoDTO};
-use TrilhosDorioCadastro\LO\{CadastroAssociadoLO as  CadastroLO,CartaoCreditoLO,BancoLO,AgenciaBancariaLO,TipoPagamentoLO};
-use TrilhosDorioCadastro\BL\{ManterAssociado as ManterBL,ControleAcesso,ManterPagamento};
+use FG\DTO\{UsuarioDTO as CadastroDTO,CartaoCreditoDTO,AgenciaBancariaDTO,BancoDTO,TipoPagamentoDTO};
+use FG\LO\{UsuarioLO as  CadastroLO,CartaoCreditoLO,BancoLO,AgenciaBancariaLO,TipoPagamentoLO};
+use FG\BL\{ManterUsuario as ManterBL,ControleAcesso,ManterPagamento};
 require '../autoloader.php';
 
 $pagina="CadDadosBancarios.php";

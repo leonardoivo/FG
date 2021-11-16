@@ -36,12 +36,19 @@ namespace FG\BL {
             return $totais;
         }
 
-        public function a($paginaCorrente, $linhasPorPagina)
+        public function ListarUsuariosPaginacao($paginaCorrente, $linhasPorPagina)
         {
 
             $LlistarGeral = new UsuariosLO();
             $LlistarGeral = $this->usuario->ListarUsuariosPaginacao($paginaCorrente, $linhasPorPagina);
             return $LlistarGeral;
+        }
+
+        public function CadastrarUsuario(UsuariosDTO $usuarioDT){
+            
+            $this->usuario->InserirUsuario($usuarioDT);
+
+
         }
         public function VerificarLoginSenha($login, $senha)
         {

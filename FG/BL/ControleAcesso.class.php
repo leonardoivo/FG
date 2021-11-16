@@ -40,5 +40,10 @@ namespace FG\BL {
             $totalPagina = ceil($TotalLinhas / $linhasPorPagina);
             return $totalPagina;
         }
+
+        public function Redirecionar($pagina)
+        {
+            echo "<script>location.href=\"{$pagina}\";</script>";
+        }
     }
 }

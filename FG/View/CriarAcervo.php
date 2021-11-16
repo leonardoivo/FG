@@ -52,14 +52,14 @@ $LTipoMidia= $TipoMidia->ListarTipos();
 			foreach ($TextoJornalisticoL->getTextoJornalistico() as $acervotexto) {
 				echo "<option value=\"{$acervotexto->idtextojor}\">{$acervotexto->titulo}</option>";
 
-            //  $LtipoMidiaJ = new $tipoMidiaLO();
-			//  $tipoMidiaJ = new ManterTipoMidia();
-			//  $LtipoMidiaJ = $tipoMidiaJ->ListarTiposPorID($acervotexto->id_tipomedia);
-			//  foreach($LtipoMidiaJ->getTipoMidia() as $tipomidiaDT){
-			// 	echo "<option value=\"{$acervotexto->idtextojor}\">{$acervotexto->titulo}</option>";
+             $LtipoMidiaJ = new $tipoMidiaLO();
+			 $tipoMidiaJ = new ManterTipoMidia();
+			 $LtipoMidiaJ = $tipoMidiaJ->ListarTiposPorID($acervotexto->id_tipomedia);
+			 foreach($LtipoMidiaJ->getTipoMidia() as $tipomidiaDT){
+				echo "<option value=\"{$acervotexto->idtextojor}\">{$acervotexto->titulo}</option>";
 
 
-			//  }
+			 }
 			}
 			?>
 		</select>
